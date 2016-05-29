@@ -4,7 +4,7 @@
 <li>前端框架：bootstrap</li>
 <li>后台框架：php</li>
 <li>数据库： mysql</li>
-<h3>具体功能</h3>
+<h3>实现功能</h3>
 <li>图书管理</li>
 <li>图书分类管理</li>
 <li>图书借阅</li>
