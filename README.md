@@ -1,8 +1,7 @@
-<h1>基于php和mysql的图书管理系统</h1>
-<p>WEB数据库课程作业项目</p>
+<h1>图书管理系统</h1>
 <h3>架构说明</h3>
 <li>前端框架：bootstrap</li>
-<li>后台框架：php</li>
+<li>后台：php</li>
 <li>数据库： mysql</li>
 <h3>实现功能</h3>
 <li>图书管理</li>
@@ -12,5 +11,16 @@
 <li>图书借阅查询</li>
 <li>账户管理</li>
 <li>权限设置</li>
-
-
+<h3>文件说明</h3>
+-data.sql数据库信息
+-conn.php数据库连接类
+--index.php主页
+--admin
+      --book图书
+        --
+      --booktype图书分类
+      --borrow借阅
+      --borrowinfo借阅信息
+      --return归还信息
+      --setting权限设置
+      --student本科生、研究生、教师
