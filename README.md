@@ -97,47 +97,4 @@ ls_return_date(计算理论上应该归还日期和罚金的归还表)
 ls_return_all(实际归还信息表)
 	CREATE VIEW ls_return_all AS
 	SELECT book.ISBN,bname,bauthor,bprice,reader.rno,rname,rdept,returndate,fine FROM book,reader,returnd WHERE returnd.ISBN=book.ISBN AND returnd.rno=reader.rno
- 
- 
-###前端首页技术分析
-&#160; &#160; &#160; &#160;在本项目中，PHP连接MySQL数据库主要是通过主页目录下的conn类，是基于mysqli封装的。封装后可使读写数据库更为方便，其中构造函数的作用是初始化mysqli类，并对数据库进行连接。析构函数的作用主要是释放连接数据库的句柄并关闭数据库，程序代码如下：
-'''
-	<?php
-	class conn {
-		private $mysqli;
-		private $result;
-		public $sql;
-		function __construct($sql) {
-			$this->sql=$sql;
-			$this->connect();
-		}
-		function connect() {
-			$this->mysqli=new mysqli("localhost","root","Wsz960402","libsystem");
-			if(mysqli_connect_errno()) {
-				die("Can not connect to mysql server");
-			}
-		}
-		function fetch_res() {	
-			$result=$this->mysqli->query($this->sql);
-			while($row = $result->fetch_assoc()){
-	            $res_array[] = $row;
-	         }
-	         return $res_array;
-		}
-		function execute_sql() {
-			$x=$this->mysqli->query($this->sql);
-			return $x;
-		}
-		function setsql($value) {
-			$this->sql=$value;
-		}
-		function __destruct() {
-			if(!empty($result)) {
-				$result->free();
-			}
-			$this->mysqli->close();
-		}
-	}
-	?>
-'''
 
