@@ -1,0 +1,531 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"borrow",
+				"borrowdate"
+			],
+			[
+				"is",
+				"$isbn〔variable〕"
+			],
+			[
+				"user",
+				"$user_id〔variable〕"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"php",
+				"php"
+			],
+			[
+				"_se",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"my",
+				"mysqli"
+			],
+			[
+				"mysq",
+				"mysqli〔class〕"
+			],
+			[
+				"li",
+				"liklist"
+			],
+			[
+				"c",
+				"createStack"
+			],
+			[
+				"times",
+				"timesA"
+			],
+			[
+				"templi",
+				"templine"
+			],
+			[
+				"in",
+				"incoming"
+			],
+			[
+				"capchar",
+				"captcha_str"
+			],
+			[
+				"label",
+				"labelCounts"
+			],
+			[
+				"L",
+				"LENA_Y"
+			],
+			[
+				"Lena",
+				"LENA_X"
+			],
+			[
+				"le",
+				"LENA_Y"
+			],
+			[
+				"diffM",
+				"sqDiffMat"
+			],
+			[
+				"data",
+				"dataSetSize"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"SideBar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"xeC",
+				"LaTeXTools: Build cache for LaTeX packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/library/admin/return/index.php",
+		"/Applications/MAMP/htdocs/library/admin/return/save.php",
+		"/Applications/MAMP/htdocs/library/admin/return/list.php",
+		"/Applications/MAMP/htdocs/library/js/borrow-info.js",
+		"/Applications/MAMP/htdocs/library/admin/borrowinfo/index.php",
+		"/Applications/MAMP/htdocs/library/admin/borrow/save.php",
+		"/Applications/MAMP/htdocs/library/admin/book/index.php",
+		"/Applications/MAMP/htdocs/library/admin/borrow/list.php",
+		"/Applications/MAMP/htdocs/library/admin/student/update.php",
+		"/Applications/MAMP/htdocs/library/admin/student/delete.php",
+		"/Applications/MAMP/htdocs/library/admin/student/findById.php",
+		"/Applications/MAMP/htdocs/library/admin/borrow/index.php",
+		"/Applications/MAMP/htdocs/library/admin/student/list.php",
+		"/Applications/MAMP/htdocs/library/js/book.js",
+		"/Applications/MAMP/htdocs/library/admin/student/index.php",
+		"/Applications/MAMP/htdocs/library/js/borrow.js",
+		"/Applications/MAMP/htdocs/library/js/student.js",
+		"/Applications/MAMP/htdocs/library/admin/student/save.php",
+		"/Applications/MAMP/htdocs/library/admin/setting/update.php",
+		"/Applications/MAMP/htdocs/library/js/setting.js",
+		"/Applications/MAMP/htdocs/library/admin/setting/list.php",
+		"/Applications/MAMP/htdocs/library/admin/setting/index.php",
+		"/Applications/MAMP/htdocs/library/admin/setting/findById.php",
+		"/Applications/MAMP/htdocs/library/conn.php",
+		"/Applications/MAMP/htdocs/library/admin/index.php",
+		"/Applications/MAMP/htdocs/library/test.php",
+		"/Applications/MAMP/htdocs/library/js/untitled",
+		"/Applications/MAMP/htdocs/library/index.php",
+		"/Applications/MAMP/htdocs/index.php",
+		"/Applications/MAMP/htdocs/library/plugins/jquery-1.11.3/jquery.min.js",
+		"/Applications/MAMP/htdocs/library/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js",
+		"/Applications/MAMP/htdocs/library/plugins/datatables-1.10.8/js/dataTables.bootstrap.js",
+		"/Applications/MAMP/htdocs/library/plugins/datatables-1.10.8/css/dataTables.bootstrap.css",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/js/bootstrap.min.js",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/js/bootstrap.js",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/css/bootstrap.min.css",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/css/bootstrap.css.map",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/css/bootstrap.css",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/css/bootstrap-theme.css.map",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css",
+		"/Applications/MAMP/htdocs/library/login/index.php",
+		"/Applications/MAMP/htdocs/library/js/login.js",
+		"/Applications/MAMP/htdocs/library/admin/indexx.php",
+		"/Applications/MAMP/htdocs/library/plugins/bootstrap-3.3.5/js/drop_down.js",
+		"/Applications/MAMP/htdocs/test.php",
+		"/Applications/MAMP/htdocs/static/library/login/index.php",
+		"/Users/wushizhe/Desktop/data.sql",
+		"/Applications/MAMP/htdocs/static/library/conn.php",
+		"/Applications/MAMP/htdocs/static/library/login/conn.php",
+		"/Applications/MAMP/htdocs/static/library/js/login.js",
+		"/Applications/MAMP/htdocs/static/library/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css",
+		"/Applications/MAMP/htdocs/jquery.min.js",
+		"/Volumes/KINGSTON/新建文本文档.txt",
+		"/Users/wushizhe/Desktop/sum.cpp",
+		"/Users/wushizhe/Desktop/B图/liner.txt",
+		"/Users/wushizhe/Desktop/B图/liner.m",
+		"/Users/wushizhe/Desktop/B图/calculate.m",
+		"/Volumes/KINGSTON/17/index.php",
+		"/Users/wushizhe/Desktop/answer.cpp",
+		"/Users/wushizhe/Downloads/Navicat Premium for mac 11.1.12 破解汉化说明.txt",
+		"/Users/wushizhe/Desktop/staticList.cpp",
+		"/Users/wushizhe/Documents/MATLAB/b2.m",
+		"/Users/wushizhe/Documents/MATLAB/getFinalValue.m",
+		"/Users/wushizhe/Documents/MATLAB/gm_1_1.m",
+		"/Users/wushizhe/Documents/MATLAB/GM10.m",
+		"/Users/wushizhe/Documents/MATLAB/untitled2.m",
+		"/Users/wushizhe/Documents/MATLAB/untitled6.m",
+		"/Users/wushizhe/Desktop/1034.cpp",
+		"/Users/wushizhe/Desktop/clearList.cpp",
+		"/Users/wushizhe/Desktop/queue.cpp",
+		"/Volumes/KINGSTON/新建文本文档 (2).txt",
+		"/Users/wushizhe/1x.txt",
+		"/Users/wushizhe/Downloads/B/B赛题/附件3/1.txt",
+		"/Users/wushizhe/1.txt",
+		"/Users/wushizhe/Downloads/B/B赛题/附件2/2.txt",
+		"/Users/wushizhe/Downloads/B/B赛题/附件2/4.txt",
+		"/Users/wushizhe/Downloads/B/B赛题/附件2/3.txt",
+		"/Users/wushizhe/Desktop/B赛题/附件2/2.htm",
+		"/Users/wushizhe/Desktop/B赛题/附件2/1.txt",
+		"/Users/wushizhe/223.txt",
+		"/Users/wushizhe/Desktop/data(dex).txt",
+		"/Users/wushizhe/a.txt",
+		"/Users/wushizhe/Desktop/链表去重.cpp",
+		"/Users/wushizhe/Desktop/蛇形数组.cpp",
+		"/Users/wushizhe/Desktop/wb/wx_server/wx_sample.php",
+		"/Users/wushizhe/Desktop/wx/wx_sample.php",
+		"/Volumes/NO NAME/c/work6.c",
+		"/Users/wushizhe/Desktop/list.cpp",
+		"/Volumes/NO NAME/PAT/1021. 个位数统计 (15).cpp",
+		"/Users/wushizhe/Desktop/1023. 组个最小数 (20).cpp",
+		"/Users/wushizhe/Desktop/1042. 字符统计(20).cpp",
+		"/Users/wushizhe/Desktop/1021. 个位数统计 (15).cpp",
+		"/Volumes/NO NAME/1038. (双重遍历)统计同成绩学生(20).cpp",
+		"/Users/wushizhe/Desktop/1038. (map方法)统计同成绩学生(20).cpp",
+		"/Volumes/NO NAME/1038. 统计同成绩学生(20).cpp",
+		"/Volumes/NO NAME/1032. 挖掘机技术哪家强(20).cpp",
+		"/Volumes/NO NAME/1020. 月饼 (25).cpp",
+		"/Users/wushizhe/Documents/acm/acm/1016. 部分A+B (15).cpp",
+		"/Volumes/NO NAME/1013. 数素数 (20).cpp",
+		"/Volumes/NO NAME/1007. 素数对猜想 (20).cpp",
+		"/Users/wushizhe/Documents/acm/acm/main.cpp",
+		"/Volumes/NO NAME/1006. 换个格式输出整数 (15).cpp",
+		"/Users/wushizhe/linux/crypto/842.c",
+		"/Users/wushizhe/eclipse/Memcached-Java-Client-master/build.xml",
+		"/Users/wushizhe/Desktop/8086汇编指令集项目/8.asm",
+		"/Users/wushizhe/Desktop/8086汇编指令集项目/helloWorld.asm",
+		"/Users/wushizhe/Desktop/8086汇编指令集项目/:*",
+		"/Users/wushizhe/Desktop/BooksManagement/bookmanage.php",
+		"/Users/wushizhe/Desktop/BooksManagement/logininto.php",
+		"/Users/wushizhe/Desktop/Books/index.html",
+		"/Users/wushizhe/Desktop/BooksManagement/register.html",
+		"/Users/wushizhe/Desktop/index.html",
+		"/Users/wushizhe/Downloads/BooksManagement/register.html",
+		"/Users/wushizhe/Downloads/BooksManagement/change_pwd.php",
+		"/Users/wushizhe/Downloads/BooksManagement/select.php",
+		"/Users/wushizhe/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/wushizhe/Documents/SQL/salesTable",
+		"/Users/wushizhe/Desktop/wx.php",
+		"/Users/wushizhe/Downloads/wx.php",
+		"/Users/wushizhe/Desktop/wx_sample2.php",
+		"/Users/wushizhe/Downloads/wx_sample2.php",
+		"/Users/wushizhe/Downloads/duthelper/wx.php",
+		"/Users/wushizhe/Downloads/duthelper/simsimi.php",
+		"/Users/wushizhe/Downloads/duthelper/mycron/48h.php"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"/static",
+			"rno",
+			"/static",
+			"欢迎您",
+			"/static",
+			"table.ajax.reload();",
+			"delete_id",
+			"showDel",
+			"add_password",
+			"#add_password",
+			"save.php",
+			"修改",
+			"update_password",
+			"密码",
+			"showUpdate",
+			"操作失败，请重试",
+			"操作失败",
+			"\"",
+			"\\\"",
+			"\"",
+			"30",
+			"/static/library",
+			"plugins",
+			"/static/library/",
+			"/static/library/plugins/bootstrap-3.3.5/css",
+			"database",
+			"CHARSET=latin1",
+			"outlist",
+			"inlist",
+			"node*",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"sSN LMDscandata",
+			"127.0.0.1",
+			"图书管理系统轻客户版",
+			"$customerevent",
+			"duthelper.sinaapp.com",
+			"sina",
+			"SAE_MYSQL_DB",
+			"SAE_MYSQL_PASS",
+			"SAE_MYSQL_USER",
+			"SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT",
+			"\"127.0.0.1\".':'.\"3306\"",
+			"SAE_MYSQL_DB",
+			"SAE_MYSQL_PASS",
+			"SAE_MYSQL_USER",
+			"SAE_MYSQL_PORT",
+			"SAE_MYSQL_HOST_M",
+			"3306",
+			"SAE_MYSQL_DB",
+			"\"127.0.0.1\"",
+			"SAE_MYSQL_PASS",
+			"SAE_MYSQL_USER",
+			"SAE_MYSQL_PORT",
+			"SAE_MYSQL_HOST_M",
+			"http://ftp.sjtu.edu.cn/fedora/epel/7/",
+			"\"",
+			"http://202.118.65.21:8085",
+			"\"",
+			"valid",
+			"valid()",
+			"href",
+			"This field is required.",
+			"please",
+			"Please enter a valid email address.",
+			"8084",
+			"8085",
+			"<table cellpadding=\"0\" width=\"100%\" class=\"displayTag\" cellspacing=\"1\" border=\"0\" id=\"user\">",
+			"spc",
+			"operator",
+			"def creatDateSet():",
+			"\n",
+			"':''}",
+			"()",
+			"st",
+			"\""
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"bno",
+			"",
+			"\\\"",
+			"\"",
+			"\\\"",
+			"/library",
+			"/library/plugins",
+			"",
+			"plugins/bootstrap-3.3.5/css",
+			"CHARSET=utf8",
+			"outList",
+			"inList",
+			"inlisL",
+			"snode*",
+			"",
+			"<br>",
+			"",
+			"<br>",
+			"",
+			"<br>",
+			"",
+			"<br>",
+			"",
+			"数据库·图书管理系统",
+			"145y9977d7.51mypc.cn",
+			"\"duthelper\"",
+			"\"wushizhe\"",
+			"\"root\"",
+			"\"localhost\"",
+			"\"duthelper\"",
+			"\"wushizhe\"",
+			"\"root\"",
+			"\"3306\"",
+			"\"127.0.0.1\"",
+			"\"3306\"",
+			"\"duthelper\"",
+			"\"127.0.0.1\"",
+			"\"wushizhe\"",
+			"\"root\"",
+			"3306",
+			"\"127.0.0.1\"",
+			"http://mirrors.neusoft.edu.cn/epel/7/",
+			"http://zhjw.dlut.edu.cn",
+			"\\\"",
+			"8085",
+			"8084"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Applications/MAMP/htdocs/library"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/SQL/salesTable.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
