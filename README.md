@@ -34,24 +34,24 @@
 + 系统运行稳定、安全可靠。
 
 ### 系统预览
-&#160; &#160; &#160; &#160;图书管理系统有多个页面组成，下面仅罗列几个典型页面，其他页面请访问http://115.159.148.111/library/。登录界面如下图所示，该页面用于管理员以及用户登录。可根据身份自动跳转至对应页面。对于用户，可实现图书馆图书信息查询、个人借阅情况查询以及个人信息维护。管理员维护如下面图所示，该页面主要用于管理员进行各项操作，完成图书信息维护、借阅信息维护、罚金处理以及用户信息维护。
+&#160; &#160; &#160; &#160;图书管理系统有多个页面组成，下面仅罗列几个典型页面，其他页面请访问[图书管理系统](http://115.159.148.111/library/) 。登录界面如下图所示，该页面用于管理员以及用户登录。可根据身份自动跳转至对应页面。对于用户，可实现图书馆图书信息查询、个人借阅情况查询以及个人信息维护。管理员维护如下面图所示，该页面主要用于管理员进行各项操作，完成图书信息维护、借阅信息维护、罚金处理以及用户信息维护。
 
 ### 测试环境
 1. 服务器端
-	操作系统：Windows Server 2008
-	服务器：Apache 2.2
-	PHP软件：PHP 5.6
-	数据库：MySQL
-	前端框架：Bootstrap 3.3.5、jQuery 1.11.3、Datatables 1.10.8
-	开发工具：Sublime Text 3
+	+ 操作系统：Windows Server 2008
+	+ 服务器：Apache 2.2
+	+ PHP软件：PHP 5.6
+	+ 数据库：MySQL
+	+ 前端框架：Bootstrap 3.3.5、jQuery 1.11.3、Datatables 1.10.8
+	+ 开发工具：Sublime Text 3
 2. 客户端
-	浏览器：Firefox、Google Chrome以及IE6.0及以上版本。
-	分辨率：最佳效果1024*768像素
+	+ 浏览器：Firefox、Google Chrome以及IE6.0及以上版本。
+	+ 分辨率：最佳效果1024*768像素
 3. 测试网址：http://115.159.148.111/library/
-			管理员用户名：10000
-			管理员密码：admin
-		学生用户名：201437003
-		学生密码：123456
+		+ 管理员用户名：10000
+		+ 管理员密码：admin
+		+ 学生用户名：201437003
+		+ 学生密码：123456
 ### 文件夹组织结构
  
 + admin身份为管理员相关的前端界面
@@ -75,24 +75,23 @@
 + 归还实体包括归还编号、ISBN、用户编号、实际归还日期、罚金。
  
 ###4.3 外模式设计
-4.3.1 ls_login(登录表)
- 
-4.3.2 ls_book_all(书籍全部信息表)
+
+ls_book_all(书籍全部信息表)
 	CREATE VIEW ls_book_all AS
 	SELECT book.ISBN,bname,bauthor,binventory,date,btype,bprice,bnum FROM book,bookinfo,type WHERE book.ISBN=bookinfo.ISBN AND book.typeid=type.typeid
  
-4.3.3 ls_borrow_date (书籍借阅并计算超时日期)
+ls_borrow_date (书籍借阅并计算超时日期)
 	CREATE VIEW ls_borrow_date AS
 	SELECT bid,book.ISBN,bname,bauthor,bprice,reader.rno,rname,borrowdate AS borrowdate,enddate AS returndate,IF(datediff(curdate(),enddate)<0,0,datediff(curdate(),enddate)) AS timeout FROM book,borrow,reader WHERE book.ISBN=borrow.ISBN AND borrow.rno=reader.rno;
+
+ls_reader_department(读者和部门表)
  
-4.3.3 ls_reader_department(读者和部门表)
- 
-4.3.4 ls_return_date(计算理论上应该归还日期和罚金的归还表)
+ls_return_date(计算理论上应该归还日期和罚金的归还表)
 	CREATE VIEW ls_return_date AS
 	SELECT bid,book.ISBN,bname,bauthor,bprice,reader.rno,rname,borrowdate AS borrowdate,enddate AS returndate,IF(datediff(curdate(),enddate)<0,0,datediff(curdate(),enddate))*0.01 AS fine FROM book,borrow,reader WHERE book.ISBN=borrow.ISBN AND borrow.rno=reader.rno;
 （罚金按照超时时长天数*0.01,即超时一天一分钱）
  
-4.3.5 ls_return_all(实际归还信息表)
+ls_return_all(实际归还信息表)
 	CREATE VIEW ls_return_all AS
 	SELECT book.ISBN,bname,bauthor,bprice,reader.rno,rname,rdept,returndate,fine FROM book,reader,returnd WHERE returnd.ISBN=book.ISBN AND returnd.rno=reader.rno
  
@@ -114,7 +113,6 @@
 				die("Can not connect to mysql server");
 			}
 		}
-
 		function fetch_res() {	
 			$result=$this->mysqli->query($this->sql);
 			while($row = $result->fetch_assoc()){
