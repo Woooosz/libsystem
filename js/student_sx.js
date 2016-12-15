@@ -6,7 +6,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/student/student/update.php',
+        url: '/student/student/update.php',
         cache: false,
         data: {
                     idss: $.trim($("#update_sno").val()),

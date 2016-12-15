@@ -2,7 +2,7 @@ var table;
 $(function () {
     table = $('#data_list').DataTable({
         "ajax": {
-            "url": "/library/admin/return/list.php",
+            "url": "/admin/return/list.php",
             "type": "POST",
             "data": function (d) {
                 return {
@@ -54,7 +54,7 @@ function returnBook() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/return/save.php',
+        url: '/admin/return/save.php',
         cache: false,
         data: {
             bno: $.trim($("#return_bno").val()),

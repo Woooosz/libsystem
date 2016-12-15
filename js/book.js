@@ -2,7 +2,7 @@ var table;
 $(function () {
     table = $('#data_list').DataTable({
         "ajax": {
-            "url": "/library/admin/book/list.php",
+            "url": "/admin/book/list.php",
             "type": "POST",
             "data": function (d) {
                 return {
@@ -48,7 +48,7 @@ function query() {
 function showDetail(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/book/findById.php',
+        url: '/admin/book/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {
@@ -80,7 +80,7 @@ function add() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/book/save.php',
+        url: '/admin/book/save.php',
         cache: false,
         data: {
             bno: $.trim($("#add_bno").val()),
@@ -115,7 +115,7 @@ function add() {
 function showUpdate(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/book/findById.php',
+        url: '/admin/book/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {
@@ -145,7 +145,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/book/update.php',
+        url: '/admin/book/update.php',
         cache: false,
         data: {
             id: $.trim($("#update_id").val()),
@@ -180,7 +180,7 @@ function showDel(id) {
 function del() {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/book/delete.php',
+        url: '/admin/book/delete.php',
         cache: false,
         data: {
             id: $('#delete_id').val()

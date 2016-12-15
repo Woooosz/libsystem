@@ -8,17 +8,17 @@
     <title>图书馆管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/library/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/library/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/library/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/library/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/library/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/library/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/library/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/library/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/library/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/library/js/common.js"></script>
-    <script src="/library/js/borrow-info_s.js"></script>
+    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" href="/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
+    <script src="/plugins/jquery-1.11.3/jquery.min.js"></script>
+    <script src="/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
+    <script src="/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
+    <script src="/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/borrow-info_s.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
@@ -31,9 +31,9 @@
                         <li class="dropdown">
                             <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname']; ?> <i class="caret"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/library/student/student">修改</a></li>
+                                <li><a href="/student/student">修改</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li><a href="/library/logout">退出</a></li>
+                                <li><a href="/logout">退出</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,10 +49,10 @@
         <div class="col-md-2 bootstrap-admin-col-left">
             <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
                 <li>
-                    <a href="/library/student/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书查询</a>
+                    <a href="/student/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书查询</a>
                 </li>
                 <li class="active">
-                    <a href="/library/student/borrowInfo"><i class="glyphicon glyphicon-chevron-right"></i> 借阅信息</a>
+                    <a href="/student/borrowInfo"><i class="glyphicon glyphicon-chevron-right"></i> 借阅信息</a>
                 </li>
            </ul>
         </div>

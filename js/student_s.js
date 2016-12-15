@@ -2,7 +2,7 @@ var table;
 $(function () {
     table = $('#data_list').DataTable({
         "ajax": {
-            "url": "/library/student/book/list.php",
+            "url": "/student/book/list.php",
             "type": "POST",
             "data": function (d) {
                 return {
@@ -46,7 +46,7 @@ function query() {
 function showDetail(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/student/book/findById.php',
+        url: '/student/book/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {

@@ -2,7 +2,7 @@ var table;
 $(function () {
     table = $('#data_list').DataTable({
         "ajax": {
-            "url": "/library/admin/student/list.php",
+            "url": "/admin/student/list.php",
             "type": "POST",
             "data": function (d) {
                 return {
@@ -51,7 +51,7 @@ function add() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/student/save.php',
+        url: '/admin/student/save.php',
         cache: false,
         data: {
             sno: $.trim($("#add_sno").val()),
@@ -81,7 +81,7 @@ function add() {
 function showUpdate(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/student/findById.php',
+        url: '/admin/student/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {
@@ -116,7 +116,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/student/update.php',
+        url: '/admin/student/update.php',
         cache: false,
         data: param,
         success: function (data) {
@@ -142,7 +142,7 @@ function showDel(id) {
 function del() {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/student/delete.php',
+        url: '/admin/student/delete.php',
         cache: false,
         data: {
             id: $('#delete_id').val()

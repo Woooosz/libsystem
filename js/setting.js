@@ -3,7 +3,7 @@ var table;
 $(function () {
     table = $('#data_list').DataTable({
         "ajax": {
-            "url": "/library/admin/setting/list.php",
+            "url": "/admin/setting/list.php",
             "type": "POST"
         },
         "columns": [
@@ -26,7 +26,7 @@ $(function () {
 function showUpdate(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/setting/findById.php',
+        url: '/admin/setting/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {
@@ -54,7 +54,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/library/admin/setting/update.php',
+        url: '/admin/setting/update.php',
         cache: false,
         data: {
             id: $.trim($("#update_id").val()),

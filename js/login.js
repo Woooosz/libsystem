@@ -15,9 +15,9 @@ $(function () {
             },
             success: function (data) {
                 if (data == 1) {
-                    window.location.href = "/library/student";
+                    window.location.href = "/student";
                 } else if (data == 9){//管理员
-                    window.location.href = "/library/admin";
+                    window.location.href = "/admin";
                 } else if (data == 0) {
                     showInfo("登录失败，请重试");
                 } else if (data == -1) {
