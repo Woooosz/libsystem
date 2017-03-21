@@ -5,17 +5,17 @@
     <title>图书馆管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/borrow-info.js"></script>
+    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" href="/libsystem/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
+    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
+    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
+    <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
+    <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
+    <script src="/libsystem/js/common.js"></script>
+    <script src="/libsystem/js/borrow-info.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
@@ -41,31 +41,7 @@
     <!-- left, vertical navbar & content -->
     <div class="row">
         <!-- left, vertical navbar -->
-        <div class="col-md-2 bootstrap-admin-col-left">
-            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                <li>
-                    <a href="/admin/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书管理</a>
-                </li>
-                <li>
-                    <a href="/admin/bookType"><i class="glyphicon glyphicon-chevron-right"></i> 图书分类管理</a>
-                </li>
-                <li>
-                    <a href="/admin/borrow"><i class="glyphicon glyphicon-chevron-right"></i> 图书借阅</a>
-                </li>
-                <li>
-                    <a href="/admin/return"><i class="glyphicon glyphicon-chevron-right"></i> 图书归还</a>
-                </li>
-                <li class="active">
-                    <a href="/admin/borrowInfo"><i class="glyphicon glyphicon-chevron-right"></i> 借阅查询</a>
-                </li>
-                    <li>
-                        <a href="/admin/student"><i class="glyphicon glyphicon-chevron-right"></i> 帐户管理</a>
-                    </li>
-                <li>
-                    <a href="/admin/setting"><i class="glyphicon glyphicon-chevron-right"></i> 系统设置</a>
-                </li>
-            </ul>
-        </div>
+             <?php  include("../left_frame.php");?>
         <!-- content -->
         <div class="col-md-10">
             <div class="row">

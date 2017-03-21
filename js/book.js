@@ -2,7 +2,7 @@ var table;
 $(function () {
     table = $('#data_list').DataTable({
         "ajax": {
-            "url": "/admin/book/list.php",
+            "url": "/libsystem/admin/book/list.php",
             "type": "POST",
             "data": function (d) {
                 return {

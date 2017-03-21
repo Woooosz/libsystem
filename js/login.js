@@ -7,7 +7,7 @@ $(function () {
 
         $.ajax({
             type: 'POST',
-            url: 'login/index.php',
+            url: '/libsystem/login/index.php',
             cache: false,
             data: {
                 username: $.trim($("#username").val()),
@@ -15,9 +15,9 @@ $(function () {
             },
             success: function (data) {
                 if (data == 1) {
-                    window.location.href = "/student";
+                    window.location.href = "/libsystem/student";
                 } else if (data == 9){//管理员
-                    window.location.href = "/admin";
+                    window.location.href = "/libsystem/admin";
                 } else if (data == 0) {
                     showInfo("登录失败，请重试");
                 } else if (data == -1) {

@@ -17,12 +17,12 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <script src="/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
+    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
+    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
+    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
 
 </head>
 <body class="bootstrap-admin-with-small-navbar">
