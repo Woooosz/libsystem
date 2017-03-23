@@ -7,10 +7,16 @@ $rno  = $_SESSION['rno'];
 $sql  = "SET NAMES UTF8";
 $conn = new conn($sql);
 $conn->execute_sql();
-$conn->sql         = "SELECT rname FROM reader where rno='".$rno."'";
-$res               = $conn->fetch_res();
-$name              = $res[0]['rname'];
+$conn->sql = "SELECT rname, rdept FROM reader where rno='".$rno."'";
+$res       = $conn->fetch_res();
+$name      = $res[0]['rname'];
+$rdept     = $res[0]['rdept'];
+if ($rdept != "管理员") {
+	Header("HTTP/1.1 303 See Other");
+	Header("Location: ../index.php");
+}
 $_SESSION['rname'] = $name;
+$_SESSION['rdept'] = $rdept;
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">

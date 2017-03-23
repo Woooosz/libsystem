@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php
+session_start();
+if ($_SESSION['rdept'] != "管理员") {
+	Header("HTTP/1.1 303 See Other");
+	Header("Location: ../../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
 <?php require_once '../../frame/header.php';?>
