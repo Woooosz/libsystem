@@ -55,7 +55,7 @@ function borrowBook() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/borrow/save.php',
+        url: '/libsystem/admin/borrow/save.php',
         cache: false,
         data: {
             bno: $.trim($("#borrow_bno").val()),

@@ -51,7 +51,7 @@ function add() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/student/save.php',
+        url: '/libsystem/admin/student/save.php',
         cache: false,
         data: {
             sno: $.trim($("#add_sno").val()),
@@ -81,7 +81,7 @@ function add() {
 function showUpdate(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/student/findById.php',
+        url: '/libsystem/admin/student/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {

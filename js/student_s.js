@@ -46,7 +46,7 @@ function query() {
 function showDetail(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/student/book/findById.php',
+        url: '/libsystem/student/book/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {

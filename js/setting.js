@@ -26,7 +26,7 @@ $(function () {
 function showUpdate(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/setting/findById.php',
+        url: '/libsystem/admin/setting/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {
@@ -54,7 +54,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/setting/update.php',
+        url: '/libsystem/admin/setting/update.php',
         cache: false,
         data: {
             id: $.trim($("#update_id").val()),
