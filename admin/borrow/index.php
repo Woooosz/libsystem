@@ -1,20 +1,7 @@
-<?php session_start() ?>
-
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
-<head>
-    <title>图书馆管理系统</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/libsystem/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
+<?php require_once '../../frame/header.php';?>
     <script src="/libsystem/js/borrow.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
@@ -26,7 +13,7 @@
                     <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname']; ?> <i class="caret"></i></a>
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?><i class="caret"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/logout">退出</a></li>
                             </ul>
@@ -41,7 +28,7 @@
     <!-- left, vertical navbar & content -->
     <div class="row">
         <!-- left, vertical navbar -->
-             <?php  include("../left_frame.php");?>
+<?php include ("../left_frame.php");?>
         <!-- content -->
         <div class="col-md-10">
             <div class="row">

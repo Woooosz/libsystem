@@ -1,6 +1,6 @@
             <div class="col-md-2 bootstrap-admin-col-left">
                 <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                    <li class="active">
+                    <li>
                         <a href="/libsystem/admin/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书管理</a>
                     </li>
                     <li>

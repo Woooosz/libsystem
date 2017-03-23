@@ -1,25 +1,14 @@
-<?php 
-    session_start(); 
-    include('../../conn.php');
+<?php
+session_start();
+include ('../../conn.php');
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
-<head>
-    <title>图书馆管理系统</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/libsystem/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/libsystem/js/common.js"></script>
+
+<?php require_once '../../frame/header.php';?>
     <script src="/libsystem/js/book.js"></script>
 </head>
+
 <body class="bootstrap-admin-with-small-navbar">
     <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
         <div class="container">
@@ -44,9 +33,9 @@
         <!-- left, vertical navbar & content -->
         <div class="row">
             <!-- left, vertical navbar -->
-             <?php  include("../left_frame.php");?>
-            <!-- content -->
-            <div class="col-md-10">              
+<?php include ("../left_frame.php");?>
+<!-- content -->
+            <div class="col-md-10">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
@@ -134,17 +123,16 @@
                                     <div class="col-lg-9">
                                         <select class="form-control" id="detail_tid" disabled>
                                             <option value="">请选择</option>
-                                                <?php 
-                                                    $conn=new conn("SET NAMES UTF8");
-                                                    $conn->execute_sql();
-                                                    $conn->sql="SELECT * FROM type";
-                                                    $res=$conn->fetch_res();
-                                                    for($i=0;$i<count($res);++$i) {
-                                                        echo  "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";                                              
-                                                    }
-                                                ?>
-                                            
-                                        </select>
+<?php
+$conn = new conn("SET NAMES UTF8");
+$conn->execute_sql();
+$conn->sql = "SELECT * FROM type";
+$res       = $conn->fetch_res();
+for ($i = 0; $i < count($res); ++$i) {
+	echo "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";
+}
+?>
+</select>
                                         <label class="control-label" for="detail_tid"></label>
                                     </div>
                                 </div>
@@ -237,13 +225,12 @@
                                     <div class="col-lg-9">
                                         <select class="form-control" id="add_tid">
                                             <option value="">请选择</option>
-                                                <?php 
-                                                    for($i=0;$i<count($res);++$i) {
-                                                        echo  "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";                                              
-                                                    }
-                                                ?>
-                                            
-                                        </select>
+<?php
+for ($i = 0; $i < count($res); ++$i) {
+	echo "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";
+}
+?>
+</select>
                                         <label class="control-label" for="add_tid"></label>
                                     </div>
                                 </div>
@@ -338,11 +325,11 @@
                                     <div class="col-lg-9">
                                         <select class="form-control" id="update_tid">
                                             <option value="">请选择</option>
-                                                <?php 
-                                                    for($i=0;$i<count($res);++$i) {
-                                                        echo  "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";                                              
-                                                    }
-                                                ?>
+<?php
+for ($i = 0; $i < count($res); ++$i) {
+	echo "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";
+}
+?>
                                         </select>
                                         <label class="control-label" for="update_tid"></label>
                                     </div>
