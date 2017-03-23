@@ -168,90 +168,6 @@ CREATE TABLE `ls_book_all` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `ls_borrow_date`
--- (See below for the actual view)
---
-CREATE TABLE `ls_borrow_date` (
-`bid` int(11)
-,`ISBN` varchar(25)
-,`bname` varchar(50)
-,`bauthor` varchar(30)
-,`bprice` decimal(5,2)
-,`rno` varchar(9)
-,`rname` varchar(5)
-,`borrowdate` date
-,`returndate` date
-,`timeout` int(7)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `ls_login`
--- (See below for the actual view)
---
-CREATE TABLE `ls_login` (
-`rno` varchar(9)
-,`password` varchar(40)
-,`rname` varchar(5)
-,`rdept` varchar(4)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `ls_reader_department`
--- (See below for the actual view)
---
-CREATE TABLE `ls_reader_department` (
-`rno` varchar(9)
-,`rname` varchar(5)
-,`rdept` varchar(4)
-,`borrownum` int(11)
-,`maxborrownum` int(11)
-,`borrowdate` int(11)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `ls_return_all`
--- (See below for the actual view)
---
-CREATE TABLE `ls_return_all` (
-`ISBN` varchar(25)
-,`bname` varchar(50)
-,`bauthor` varchar(30)
-,`bprice` decimal(5,2)
-,`rno` varchar(9)
-,`rname` varchar(5)
-,`rdept` varchar(4)
-,`returndate` date
-,`fine` decimal(5,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `ls_return_date`
--- (See below for the actual view)
---
-CREATE TABLE `ls_return_date` (
-`bid` int(11)
-,`ISBN` varchar(25)
-,`bname` varchar(50)
-,`bauthor` varchar(30)
-,`bprice` decimal(5,2)
-,`rno` varchar(9)
-,`rname` varchar(5)
-,`borrowdate` date
-,`returndate` date
-,`fine` decimal(9,2)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `reader`
 --
 
@@ -338,4 +254,6 @@ INSERT INTO `type` (`typeid`, `btype`) VALUES
 CREATE view ls_login AS select rno, password, rname, department.rdept FROM reader JOIN department ON department.rdept = reader.rdept;
 CREATE view ls_book_all AS select ISBN, bname, bauthor, binventory, date, btype, bprice, bnum FROM book JOIN type on book.typeid = type.typeid;
 CREATE view ls_reader_department AS select rno, rname, reader.rdept, borrownum, maxborrownum, borrowdate FROM reader JOIN department on department.rdept = reader.rdept;
-CREATE view ls_return_date AS select bid, book.ISBN, bname, bauthor, bprice, reader.rno, rname, borrowdate, returndate, fine FROM reader, book, borrow, returnd WHERE book.ISBN = borrow.ISBN AND borrow.rno = reader.rno AND reader.rno = returnd.rno;
+CREATE view ls_return_date AS select returnd.rno, ISBN, returndate, fine FROM returnd JOIN reader ON returnd.rno = reader.rno;
+CREATE view ls_return_all AS select book.ISBN, bname, bauthor, bprice, reader.rno, rname, rdept, returndate, IF(datediff(returndate,enddate)>0,datediff(returndate,enddate)*0.1,0) AS fine FROM returnd, book, reader, borrow WHERE book.ISBN = borrow.ISBN AND borrow.ISBN = book.ISBN and returnd.rno = reader.rno;
+//CREATE view ls_borrow_date AS select 
