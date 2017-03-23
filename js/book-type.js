@@ -41,7 +41,7 @@ function add() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/bookType/save.php',
+        url: '/libsystem/admin/bookType/save.php',
         cache: false,
         data: {
             tname: $.trim($("#add_tname").val())
@@ -68,7 +68,7 @@ function add() {
 function showUpdate(id) {
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/bookType/findById.php',
+        url: '/libsystem/admin/bookType/findById.php',
         cache: false,
         data: {id: id},
         success: function (data) {
@@ -90,7 +90,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/bookType/update.php',
+        url: '/libsystem/admin/bookType/update.php',
         cache: false,
         data: {
             id: $.trim($("#update_id").val()),
@@ -123,7 +123,7 @@ function showDel(id) {
 function del() {
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/bookType/delete.php',
+        url: '/libsystem/admin/bookType/delete.php',
         cache: false,
         data: {
             id: $('#delete_id').val()

@@ -54,7 +54,7 @@ function returnBook() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/return/save.php',
+        url: '/libsystem/admin/return/save.php',
         cache: false,
         data: {
             bno: $.trim($("#return_bno").val()),

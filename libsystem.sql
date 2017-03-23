@@ -334,5 +334,8 @@ INSERT INTO `type` (`typeid`, `btype`) VALUES
 (17, '管理'),
 (18, '军事'),
 (19, '宗教');
-<br />
-<b>Fatal error</b>:  Call to a member function has() on null in <b>D:\WWW\phpMyAdmin\libraries\plugins\export\ExportSql.php</b> on line <b>1582</b><br />
+
+CREATE view ls_login AS select rno, password, rname, department.rdept FROM reader JOIN department ON department.rdept = reader.rdept;
+CREATE view ls_book_all AS select ISBN, bname, bauthor, binventory, date, btype, bprice, bnum FROM book JOIN type on book.typeid = type.typeid;
+CREATE view ls_reader_department AS select rno, rname, reader.rdept, borrownum, maxborrownum, borrowdate FROM reader JOIN department on department.rdept = reader.rdept;
+CREATE view ls_return_date AS select bid, book.ISBN, bname, bauthor, bprice, reader.rno, rname, borrowdate, returndate, fine FROM reader, book, borrow, returnd WHERE book.ISBN = borrow.ISBN AND borrow.rno = reader.rno AND reader.rno = returnd.rno;
