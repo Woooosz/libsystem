@@ -8,7 +8,7 @@
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname']?><i class="caret"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/logout">退出</a></li>
+                                    <li><a href="../../logout">退出</a></li>
                                 </ul>
                             </li>
                         </ul>

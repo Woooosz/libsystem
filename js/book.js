@@ -26,7 +26,7 @@ $(function () {
             {
                 targets: 7,
                 render: function (a, b, c, d) {
-                    return (new Date(c.cdate)).format('yyyy-MM-dd');
+                    return c.cdate;
                 }
             },
             {
@@ -60,7 +60,7 @@ function showDetail(id) {
             $("#detail_total").val(datas.total);
             $("#detail_remain").val(datas.remain);
             $("#detail_brief").val(datas.brief);
-            $("#detail_tid").val(datas.tid);
+            $("#detail_tname").val(datas.tname);
             $('#modal_detail').modal('show');
         },
         error: function (jqXHR, textStatus, errorThrown) {

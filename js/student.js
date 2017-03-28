@@ -116,7 +116,7 @@ function update() {
 
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/student/update.php',
+        url: '/libsystem/admin/student/update.php',
         cache: false,
         data: param,
         success: function (data) {
@@ -142,7 +142,7 @@ function showDel(id) {
 function del() {
     jQuery.ajax({
         type: 'POST',
-        url: '/admin/student/delete.php',
+        url: '/libsystem/admin/student/delete.php',
         cache: false,
         data: {
             id: $('#delete_id').val()

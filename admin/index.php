@@ -7,18 +7,15 @@ $rno  = $_SESSION['rno'];
 $sql  = "SET NAMES UTF8";
 $conn = new conn($sql);
 $conn->execute_sql();
-$conn->sql = "SELECT rname, rdept FROM reader where rno='".$rno."'";
-$res       = $conn->fetch_res();
-$name      = $res[0]['rname'];
-$rdept     = $res[0]['rdept'];
-/*
-if ($rdept != "管理员") {
-Header("HTTP/1.1 303 See Other");
-Header("Location: ../index.php");
-}
- */
+$conn->sql         = "SELECT rname, rdept FROM reader where rno='".$rno."'";
+$res               = $conn->fetch_res();
+$name              = $res[0]['rname'];
+$rdept             = $res[0]['rdept'];
 $_SESSION['rname'] = $name;
 $_SESSION['rdept'] = $rdept;
+
+$conn->sql = "select * from ls_basicinfo";
+$res       = $conn->fetch_res();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
@@ -34,9 +31,9 @@ $_SESSION['rdept'] = $rdept;
                         <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您, <?php echo $_SESSION['rname'];?><i class="caret"></i></a>
+                                <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname']?><i class="caret"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/logout">退出</a></li>
+                                    <li><a href="../logout">退出</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -45,6 +42,7 @@ $_SESSION['rdept'] = $rdept;
             </div>
         </div>
     </nav>
+</nav>
 
     <div class="container">
         <!-- left, vertical navbar & content -->
@@ -52,121 +50,56 @@ $_SESSION['rdept'] = $rdept;
             <!-- left, vertical navbar -->
 <?php include ("./left_frame.php");?>
             <!-- content -->
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">图书管理</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>根据图书编号、图书名称查询图书基本信息</li>
-                                    <li>添加、修改、删除图书</li>
-                                </ul>
-                            </div>
-                        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">用户总数</h3>
                     </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">图书分类管理</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>根据分类名称查询图书分类信息</li>
-                                    <li>添加、修改、删除图书分类</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="panel-body">
+                        <p>当前用户总数为<mark><?php echo $res[0]['totalPeople'];
+?></mark>人，其中本科生用户<mark><?php echo $res[0]['benke'];
+?></mark>人，研究生用户<mark><?php echo $res[0]['yanjiu'];
+?></mark>人，教师用户<mark><?php echo $res[0]['teacher'];
+?></mark>人，当前用户在线<mark>36</mark>人。</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">图书借阅</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>根据学号、图书编号借阅图书</li>
-                                    <li>展示此学号的借阅信息</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">图书信息</h3>
                     </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">图书归还</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>根据学号、图书编号归还图书</li>
-                                    <li>展示此学号的借阅信息</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="panel-body">
+                        <p>系统当前图书有<mark><?php echo $res[0]['bookTypeNum'];
+?></mark>个门类，一共有<mark><?php echo $res[0]['bookKinds'];
+?></mark>本图书，藏书量一共<mark><?php echo $res[0]['bookTotalNum'];
+?></mark>本，当前可借阅数目共<mark><?php echo $res[0]['bookAvailableNum'];
+?></mark>本。</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">借阅查询</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>展示所有学生的图书借阅信息</li>
-                                    <li>可根据图书编号、图书名称、学号、姓名进行查询</li>
-                                </ul>
-                            </div>
-                        </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">借阅信息</h3>
                     </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">管理员管理</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>根据管理员编号、管理员名称查询管理员基本信息</li>
-                                    <li>添加、修改、删除管理员基本信息</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="panel-body">
+                        <p>自从系统运行以来，一共发生借阅<mark><?php echo $res[0]['totalBorrowNum'];
+?></mark>次，归还<mark><?php echo $res[0]['totalReturnNum'];
+?></mark>次。</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">学生管理</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>根据学号、姓名查询学生基本信息</li>
-                                    <li>添加、修改、删除学生信息</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">财务欠款</h3>
                     </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">系统设置</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                <ul>
-                                    <li>设置最多借阅天数</li>
-                                    <li>设置最多借阅本数</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="panel-body">
+                        <p>当前图书超期一共<mark><?php echo $res[0]['oweNum'];
+?></mark>人次，总共欠款<mark><?php echo $res[0]['totalFine'];
+?></mark>元</p>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 </html>

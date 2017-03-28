@@ -5,6 +5,12 @@
                 图书管理模块
             </h5>
         </a>
+        <a href="/libsystem/admin/" class="list-group-item">
+            <h5 class="list-group-item-heading">
+                主面板
+            </h5>
+            <p class="list-group-item-text">运行统计信息</p>
+        </a>
         <a href="/libsystem/admin/book" class="list-group-item">
             <h5 class="list-group-item-heading">
                 图书管理

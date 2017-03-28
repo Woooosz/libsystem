@@ -103,21 +103,10 @@ if ($_SESSION['rdept'] != "管理员") {
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 form-group">
-                                    <label class="col-lg-3 control-label" for="detail_tid">图书分类</label>
+                                    <label class="col-lg-3 control-label" for="detail_name">图书分类</label>
                                     <div class="col-lg-9">
-                                        <select class="form-control" id="detail_tid" disabled>
-                                            <option value="">请选择</option>
-<?php
-$conn = new conn("SET NAMES UTF8");
-$conn->execute_sql();
-$conn->sql = "SELECT * FROM type";
-$res       = $conn->fetch_res();
-for ($i = 0; $i < count($res); ++$i) {
-	echo "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";
-}
-?>
-</select>
-                                        <label class="control-label" for="detail_tid"></label>
+                                    <input class="form-control" id="detail_tname" type="text" value="" disabled>
+                                        <label class="control-label" for="detail_tname"></label>
                                     </div>
                                 </div>
                             </div>
@@ -210,6 +199,11 @@ for ($i = 0; $i < count($res); ++$i) {
                                         <select class="form-control" id="add_tid">
                                             <option value="">请选择</option>
 <?php
+include_once ('../../conn.php');
+$conn = new conn("SET NAMES UTF8");
+$conn->execute_sql();
+$conn->sql = "SELECT * FROM type";
+$res       = $conn->fetch_res();
 for ($i = 0; $i < count($res); ++$i) {
 	echo "<option value=\"".$res[$i]['typeid']."\">".$res[$i]['btype']."</option>";
 }

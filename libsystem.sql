@@ -151,23 +151,6 @@ INSERT INTO `department` (`rdept`, `maxborrownum`, `borrowdate`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `ls_book_all`
--- (See below for the actual view)
---
-CREATE TABLE `ls_book_all` (
-`ISBN` varchar(25)
-,`bname` varchar(50)
-,`bauthor` varchar(30)
-,`binventory` int(11)
-,`date` date
-,`btype` varchar(15)
-,`bprice` decimal(5,2)
-,`bnum` int(11)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `reader`
 --
 
@@ -256,4 +239,5 @@ CREATE view ls_book_all AS select ISBN, bname, bauthor, binventory, date, btype,
 CREATE view ls_reader_department AS select rno, rname, reader.rdept, borrownum, maxborrownum, borrowdate FROM reader JOIN department on department.rdept = reader.rdept;
 CREATE view ls_return_date AS select returnd.rno, ISBN, returndate, fine FROM returnd JOIN reader ON returnd.rno = reader.rno;
 CREATE view ls_return_all AS select book.ISBN, bname, bauthor, bprice, reader.rno, rname, rdept, returndate, IF(datediff(returndate,enddate)>0,datediff(returndate,enddate)*0.1,0) AS fine FROM returnd, book, reader, borrow WHERE book.ISBN = borrow.ISBN AND borrow.ISBN = book.ISBN and returnd.rno = reader.rno;
-//CREATE view ls_borrow_date AS select 
+CREATE view ls_borrow_date AS select bid,book.ISBN, bname, bauthor, bprice, reader.rno, rname, borrowdate, enddate as returndate, if(datediff(CURRENT_DATE,enddate),datediff(CURRENT_DATE,enddate),0) as timeout FROM reader, borrow, book WHERE reader.rno = borrow.rno AND borrow.ISBN = book.ISBN;
+create view ls_basicInfo as select (SELECT COUNT(*) from reader where rdept != '管理员') as totalPeople , (SELECT COUNT(*) from reader where rdept = '本科生') as benke, (SELECT COUNT(*) from reader where rdept = '研究生') as yanjiu, (SELECT COUNT(*) from reader where rdept = '教师') as teacher, (select count(*) from type) as bookTypeNum, (select count(*) from book ) as bookKinds, (select sum(binventory) from book) as bookTotalNum, (select sum(bnum) from book) as bookAvailableNum,  (select sum(fine) from ls_return_all) as totalFine, (select count(*) from borrow ) as totalBorrowNum, (select count(*) from returnd) as totalReturnNum, (select count(*) from ls_return_all) as oweNum;
