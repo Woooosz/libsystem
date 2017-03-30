@@ -4,7 +4,7 @@
 	$book_isbn=$_POST['id'];
 	$conn=new conn("SET NAMES UTF8");
 	$conn->execute_sql();
-	$conn->sql="SELECT * FROM book WHERE ISBN='".$book_isbn."'";
+	$conn->sql="SELECT * FROM ls_book_all WHERE ISBN='".$book_isbn."'";
 	$res=$conn->fetch_res();
 	//$_SESSION['user_id']=$user_id;
 
@@ -17,7 +17,7 @@
 		'id'=>$res[0]['ISBN'],
 		'price'=>$res[0]['bprice'],
 		'remain'=>$res[0]['bnum'],
-		'tid'=>'null',
+		'tid'=>$res[0]['btype'],
 		'tname'=>$res[0]['btype'],
 		'total'=>$res[0]['binventory'],
 		'udate'=>'null',

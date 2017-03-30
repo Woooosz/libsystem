@@ -1,24 +1,16 @@
-<?php session_start() ?>
-
-
+<?php
+session_start();
+if (empty($_SESSION['rno'])) {
+	Header("HTTP/1.1 303 See Other");
+	Header("Location: ../../index.php");
+}
+?>
 <!DOCTYPE html>
-
 <html lang="zh-CN" class="ax-vertical-centered">
 <head>
-    <title>图书馆管理系统</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/libsystem/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/borrow-info_s.js"></script>
+<?php include ('../../frame/header.php');?>
+    <script src="/libsystem/js/common.js"></script>
+    <script src="/libsystem/js/borrow-info_s.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
 <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
@@ -29,11 +21,11 @@
                     <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname']; ?> <i class="caret"></i></a>
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?> <i class="caret"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/student/student">修改</a></li>
+                                <li><a href="/libsystem/student/student">修改</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li><a href="/logout">退出</a></li>
+                                <li><a href="/libsystem/logout">退出</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -46,16 +38,7 @@
     <!-- left, vertical navbar & content -->
     <div class="row">
         <!-- left, vertical navbar -->
-        <div class="col-md-2 bootstrap-admin-col-left">
-            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                <li>
-                    <a href="/student/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书查询</a>
-                </li>
-                <li class="active">
-                    <a href="/student/borrowInfo"><i class="glyphicon glyphicon-chevron-right"></i> 借阅信息</a>
-                </li>
-           </ul>
-        </div>
+<?php include ("../left_frame.php");?>
         <!-- content -->
         <div class="col-md-10">
             <div class="row">
@@ -103,7 +86,6 @@
                             <th>学生姓名</th>
                             <th>借阅日期</th>
                             <th>截止还书日期</th>
-                            <th>超期天数</th>
                         </tr>
                         </thead>
                     </table>

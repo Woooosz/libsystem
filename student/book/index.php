@@ -1,80 +1,27 @@
-<?php 
-    session_start(); 
-    include('../../conn.php');
+<?php
+session_start();
+include ('../../conn.php');
+if (empty($_SESSION['rno'])) {
+	Header("HTTP/1.1 303 See Other");
+	Header("Location: ../../index.php");
+}
 ?>
-
 <!DOCTYPE html>
-
-
-
 <html lang="zh-CN" class="ax-vertical-centered">
 <head>
-    <title>图书馆管理系统</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/libsystem/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/student_s.js"></script>
+<?php include ('../../frame/header.php');?>
+    <script src="/libsystem/js/common.js"></script>
+    <script src="/libsystem/js/student_s.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
-    <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="collapse navbar-collapse main-navbar-collapse">
-                        <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?> <i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/student/student">修改</a></li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li><a href="/logout">退出</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?php require_once '../../frame/welcome.php';?>
     <div class="container">
         <!-- left, vertical navbar & content -->
         <div class="row">
             <!-- left, vertical navbar -->
-            <div class="col-md-2 bootstrap-admin-col-left">
-                <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                    <li class="active">
-                        <a href="/student/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书查询</a>
-                    </li>
-                    <li>
-                        <a href="/student/borrowInfo"><i class="glyphicon glyphicon-chevron-right"></i> 借阅信息</a>
-                    </li>
-                    
-                        
-                    
-                        
-                    
-                    
-                </ul>
-            </div>
+            <?php include ("../left_frame.php");?>
             <!-- content -->
             <div class="col-md-10">
-                
-                    
-                        
-                            
-                        
-                    
-                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
@@ -159,26 +106,7 @@
                                 <div class="col-lg-12 form-group">
                                     <label class="col-lg-3 control-label" for="detail_tid">图书分类</label>
                                     <div class="col-lg-9">
-                                        <select class="form-control" id="detail_tid" disabled>
-                                            <option value="">请选择</option>
-                                            
-                                                <option value="4">
-                                                    科技
-                                                </option>
-                                            
-                                                <option value="5">
-                                                    美术
-                                                </option>
-                                            
-                                                <option value="6">
-                                                    音乐
-                                                </option>
-                                            
-                                                <option value="9">
-                                                    asdas
-                                                </option>
-                                            
-                                        </select>
+                                        <input class="form-control" id="detail_tid" type="text" value="" disabled>
                                         <label class="control-label" for="detail_tid"></label>
                                     </div>
                                 </div>
@@ -233,6 +161,24 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" id="btn_detail_close" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_info" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="infoModalLabel">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12" id="div_info"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btn_info_close" data-dismiss="modal">关闭</button>
                 </div>
             </div>
         </div>

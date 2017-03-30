@@ -19,7 +19,6 @@ $(function () {
             {"data": "sno"},
             {"data": "sname"},
             {"data": null},
-            {"data": null},
             {"data": null}
         ],
         columnDefs: [
@@ -33,13 +32,6 @@ $(function () {
                 targets: 7,
                 render: function (a, b, c, d) {
                     return (new Date(c.rdate)).format('yyyy-MM-dd');
-                }
-            },
-            {
-                targets: 8,
-                render: function (a, b, c, d) {
-                    var days = (new Date()).minus(new Date(c.rdate));
-                    return days > 0 ? days : "";
                 }
             }
         ]

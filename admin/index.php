@@ -7,13 +7,17 @@ $rno  = $_SESSION['rno'];
 $sql  = "SET NAMES UTF8";
 $conn = new conn($sql);
 $conn->execute_sql();
-$conn->sql         = "SELECT rname, rdept FROM reader where rno='".$rno."'";
-$res               = $conn->fetch_res();
-$name              = $res[0]['rname'];
-$rdept             = $res[0]['rdept'];
+$conn->sql = "SELECT rname, rdept FROM reader where rno='".$rno."'";
+$res       = $conn->fetch_res();
+$name      = $res[0]['rname'];
+$rdept     = $res[0]['rdept'];
+
+if ($res[0]['rdept'] != "管理员") {
+	Header("HTTP/1.1 303 See Other");
+	Header("Location: ../index.php");
+}
 $_SESSION['rname'] = $name;
 $_SESSION['rdept'] = $rdept;
-
 $conn->sql = "select * from ls_basicinfo";
 $res       = $conn->fetch_res();
 ?>
@@ -23,27 +27,7 @@ $res       = $conn->fetch_res();
 <?php require_once '../frame/header.php';?>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
-    <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="collapse navbar-collapse main-navbar-collapse">
-                        <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname']?><i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="../logout">退出</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</nav>
-
+    <?php require_once '../frame/welcome.php';?>
     <div class="container">
         <!-- left, vertical navbar & content -->
         <div class="row">

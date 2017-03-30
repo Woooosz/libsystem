@@ -39,11 +39,11 @@ function validUpdate() {
     var update_sname = $.trim($("#update_sname").val());
     if (update_sname == "") {
         $("#update_sname").parent().parent().addClass("has-error");
-        $("#update_sname").next().text("请输入管理员名称");
+        $("#update_sname").next().text("请输入用户名称");
         flag = false;
     } else if (update_sname.length > 50) {
         $("#update_sname").parent().parent().addClass("has-error");
-        $("#update_sname").next().text("管理员名称长度不能大于50");
+        $("#update_sname").next().text("用户名称长度不能大于50");
         flag = false;
     } else {
         $("#update_sname").parent().parent().removeClass("has-error");
@@ -54,10 +54,6 @@ function validUpdate() {
     if (update_password == "") {
         $("#update_password").parent().parent().addClass("has-error");
         $("#update_password").next().text("请输入密码");
-        flag = false;
-    } else if (update_password.length > 20) {
-        $("#update_password").parent().parent().addClass("has-error");
-        $("#update_password").next().text("密码长度不能大于20");
         flag = false;
     } else {
         $("#update_password").parent().parent().removeClass("has-error");

@@ -1,13 +1,17 @@
 <?php
-    session_start();
-    header("Content-type:text/html;charset=utf-8"); 
-    include('../../conn.php');
-    $rno=$_SESSION['rno'];
-    $sql="SET NAMES UTF8";
-    $conn=new conn($sql);
-    $conn->execute_sql();
-    $conn->sql="SELECT * FROM reader where rno='".$rno."'";
-    $res=$conn->fetch_res();
+session_start();
+header("Content-type:text/html;charset=utf-8");
+if (empty($_SESSION['rno'])) {
+	Header("HTTP/1.1 303 See Other");
+	Header("Location: ../../index.php");
+}
+include ('../../conn.php');
+$rno  = $_SESSION['rno'];
+$sql  = "SET NAMES UTF8";
+$conn = new conn($sql);
+$conn->execute_sql();
+$conn->sql = "SELECT * FROM reader where rno='".$rno."'";
+$res       = $conn->fetch_res();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
@@ -36,11 +40,11 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?><i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/student/student">修改</a></li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li><a href="/logout">退出</a></li>
-                                </ul>
+                            <ul class="dropdown-menu">
+                                <li><a href="/libsystem/student/student">修改</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="/libsystem/logout">退出</a></li>
+                            </ul>
                             </li>
                         </ul>
                     </div>
@@ -52,31 +56,9 @@
         <!-- left, vertical navbar & content -->
         <div class="row">
             <!-- left, vertical navbar -->
-            <div class="col-md-2 bootstrap-admin-col-left">
-                <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                    <li>
-                        <a href="/student/book"><i class="glyphicon glyphicon-chevron-right"></i> 图书查询</a>
-                    </li>
-                    <li>
-                        <a href="/student/borrowInfo"><i class="glyphicon glyphicon-chevron-right"></i> 借阅信息</a>
-                    </li>
-                    
-                        
-                    
-                    
-                        
-                    
-                </ul>
-            </div>
+            <?php include ("../left_frame.php");?>
             <!-- content -->
             <div class="col-md-10">
-                
-                    
-                        
-                            
-                        
-                    
-                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
@@ -90,7 +72,7 @@
                                         <div class="col-lg-12 form-group">
                                             <label class="col-lg-3 control-label" for="update_sno"><label class="text-danger">*&nbsp;</label>学号</label>
                                             <div class="col-lg-7">
-                                                <input class="form-control" id="update_sno" type="text" value="<?php  echo $rno;  ?>" disabled>
+                                                <input class="form-control" id="update_sno" type="text" value="<?php echo $rno;?>" disabled>
                                                 <label class="control-label" for="update_sno"></label>
                                             </div>
                                         </div>
@@ -99,7 +81,7 @@
                                         <div class="col-lg-12 form-group has">
                                             <label class="col-lg-3 control-label" for="update_sname"><label class="text-danger">*&nbsp;</label>姓名</label>
                                             <div class="col-lg-7">
-                                                <input class="form-control" id="update_sname" type="text" value="<?php  echo $res[0]['rname'];  ?>">
+                                                <input class="form-control" id="update_sname" type="text" value="<?php echo $res[0]['rname'];?>">
                                                 <label class="control-label" for="update_sname"></label>
                                             </div>
                                         </div>
@@ -108,7 +90,7 @@
                                         <div class="col-lg-12 form-group">
                                             <label class="col-lg-3 control-label" for="update_password"><label class="text-danger">*&nbsp;</label>原密码</label>
                                             <div class="col-lg-7">
-                                                <input class="form-control" id="update_password" type="text" value="<?php  echo $res[0]['password'];  ?>">
+                                                <input class="form-control" id="update_password" type="text" value="<?php echo $res[0]['password'];?>">
                                                 <label class="control-label" for="update_password"></label>
                                             </div>
                                         </div>
@@ -134,7 +116,9 @@
 
                                     <div class="row">
                                         <div class="col-lg-12 form-group" style="text-align: center;">
-                                            <button type="button" class="btn btn-lg btn-primary" id="btn_update_save" onclick="update()">保&nbsp;&nbsp;存</button>
+                                            <button type="button" class="btn btn-lg btn-primary" id="btn_update_save" onclick="update()">保&nbsp;
+&nbsp;
+存</button>
                                         </div>
                                     </div>
                                 </form>

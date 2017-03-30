@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-
-
 <html lang="zh-CN" class="bootstrap-admin-vertical-centered">
 <head>
     <title>图书馆管理系统</title>
@@ -21,6 +18,36 @@
         }
     </style>
 </head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <h2>欢迎使用图书管理系统</h2>
+                    <p>2016-06-01 && 电商1402班</p>
+                    <p>WEB数据库设计课程作业小组<p>
+            </div>
+
+            <form class="bootstrap-admin-login-form">
+                <div class="form-group">
+                    <label class="control-label" for="username">账&nbsp;号</label>
+                    <input type="text" class="form-control" id="username" placeholder="学号"/>
+                    <label class="control-label" for="username" style="display:none;"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="password">密&nbsp;码</label>
+                    <input type="password" class="form-control" id="password" placeholder="密码"/>
+                    <label class="control-label" for="username" style="display:none;"></label>
+                </div>
+                <div align="center">
+                <input type="button" class="btn btn-large btn-block btn-success" id="login_submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录"/>
+                <input type="button" class="btn btn-large btn-block btn-warning" data-toggle="modal" data-target="#modal_reg" id="login_reg" value="注&nbsp;&nbsp;&nbsp;&nbsp;册"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <body class="bootstrap-admin-without-padding">
     <div class="modal fade" id="modal_info" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
         <div class="modal-dialog" role="document">
@@ -148,36 +175,6 @@ for ($i = 0; $i < count($res); ++$i) {
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-warning">
-                <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <h2>欢迎使用图书管理系统</h2>
-                    <p>2016-06-01 && 电商1402班</p>
-                    <p>WEB数据库设计课程作业小组<p>
-            </div>
-
-            <form class="bootstrap-admin-login-form">
-                <div class="form-group">
-                    <label class="control-label" for="username">账&nbsp;号</label>
-                    <input type="text" class="form-control" id="username" placeholder="学号"/>
-                    <label class="control-label" for="username" style="display:none;"></label>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="password">密&nbsp;码</label>
-                    <input type="password" class="form-control" id="password" placeholder="密码"/>
-                    <label class="control-label" for="username" style="display:none;"></label>
-                </div>
-                <div align="center">
-                <input type="button" class="btn btn-large btn-block btn-success" id="login_submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录"/>
-                <input type="button" class="btn btn-large btn-block btn-warning" data-toggle="modal" data-target="#modal_reg" id="login_reg" value="注&nbsp;&nbsp;&nbsp;&nbsp;册"/>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 
 
