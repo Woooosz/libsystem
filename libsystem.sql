@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.2
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 31, 2016 at 10:08 AM
--- Server version: 5.5.40
--- PHP Version: 5.6.1
+-- Host: localhost:3306
+-- Generation Time: Mar 31, 2017 at 01:42 PM
+-- Server version: 5.6.35
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `libsystem`
@@ -43,7 +37,7 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`ISBN`, `bname`, `bauthor`, `binventory`, `bnum`, `typeid`, `bprice`, `brief`, `date`) VALUES
-('978-7-04-043202-2', '毛泽东思想和中国特色社会主义理论体系概论', '编写组', 4, 4, 7, '25.00', '大学教材', '2013-05-29'),
+('978-7-04-043202-2', '毛泽东思想和中国特色社会主义理论体系概论', '编写组', 4, 4, 12, '25.00', '', '2013-05-29'),
 ('978-7-111-26281-7', 'PHP和MYSQL开发', 'Luke Welling', 3, 3, 14, '95.00', '本书将PHP开发与MySQL应用相结合，分别对PHP和MySQL做了深入浅出的分析，不仅介绍PHP和MySQL的一般概念，而且对PHP和MySQL的Web应用做了较全面的阐述，并包括几个经典且实用的例子。\n本书是第4版，经过了全面的更新、重写和扩展，包括PHP 5.3最新改进的特性（例如，更好的错误和异常处理），MySQL的存储过程和存储引擎，Ajax技术与Web 2.0以及Web应用需要注意的安全问题。', '2016-05-02'),
 ('978-7-111-33582-9', 'Linux内核设计与实现', 'Rober tLove', 5, 5, 14, '69.00', '', '2016-05-29'),
 ('978-7-111-45382-6', '离散数学及其应用', 'Kenneth H.Rosen', 3, 3, 14, '129.00', '《离散数学及其应用》(原书第5版)全面而系统地介绍了离散数学的理论和方法，内容涉及数学推广、组合分析、离散结构和算法设计。全书取材广泛，除包括定义、定理的严密陈述外，还配备大量的实例和图表的说明，各种联系和题目。以及丰富的历史资料和网站资源。第5版在前四版的基础上作了大量的改进，使其成为更有效的教学工具。', '2016-05-02'),
@@ -75,7 +69,7 @@ INSERT INTO `book` (`ISBN`, `bname`, `bauthor`, `binventory`, `bnum`, `typeid`, 
 ('978-7-539-98283-0', '无声告白', '[美]伍绮诗', 3, 3, 10, '35.00', '', '2016-05-23'),
 ('978-7-54047543-7', '我喜欢这个功利的世界', '咪蒙', 4, 4, 10, '27.40', '国民励志女作家咪蒙，献给每一个人的梦想之书。\n当你足够优秀，所有你想要的一切都会主动找上你。\n当你发光发亮，自然万众瞩目。\n当你觉得为时已晚的时候，恰恰是最早的时候。\n这个世上，只要你敢，再大的不可能，都会变成可能。\n我喜欢这个“功利”的世界，\n更重要的是，功利的背后，它承认的是你的努力。\n我们深知世界的复杂、黑暗和荒谬，依然选择面对复杂，保持欢喜。\n写给每一个为了让自己变得更好，而不断向上的你。', '2015-01-23'),
 ('978-7-5405-8628-7', '识夜描银2', '十字卿（编）/潇十里（绘）', 3, 3, 9, '20.00', '漫画', '2014-05-29'),
-('978-7-5405-8629-4', '识夜描银1', '十字卿（编）/潇十里（绘）', 3, 2, 9, '20.00', '漫画', '2014-05-29'),
+('978-7-5405-8629-4', '识夜描银1', '十字卿（编）/潇十里（绘）', 3, 3, 9, '20.00', '漫画', '2014-05-29'),
 ('978-7-541-14223-9', '你是我的命运', '白石一文', 5, 5, 10, '36.80', '◎有每个你我的悲喜过往，有每颗真心的倔强柔软\n◎跨越十年的爱情成长，女人20~40岁的人生剧本\n◎继村上春树、吉本芭娜娜后，日本中生代重要作家之一；让渡边淳一、五月天阿信感动落泪的人；直木奖获得者白石一文，写给命运的情书\n------------------------\n冬木亚纪是个才色兼备的女子，在她二十九岁这年，收到前男友佐藤康的结婚请柬。与康分手后，亚纪曾收到康的母亲写来的一封信，然而直到康的婚礼当日，她才把两年前一直没看完的信仔细读完，首次察觉自己曾经与命运擦身而过……\n二十九岁到四十岁，对女人而言是 “动荡不安的十年”。事业、 恋爱、结婚、生育、家族……充满大大小小的迂回曲折。在面对每一次选择时，不知何去何从，凭全部的智慧来应对，试图抓住最想要的人生。最终回望那么多的岔路口，才了悟这样编织而成的结果就是命运。', '2015-02-13'),
 ('978-7-542-11099-2', '佛教的见地与修道', '宗萨钦哲仁波切', 3, 3, 19, '16.00', '书和人一样，是要讲缘份的。\n一本好书，一本深入浅出、精简而全面的佛教通论……\n作者是一位出色的老师，秉承藏传佛教里最优良的传承和教育，享誉世界，他以自己的浅白文字和编选度，将佛教扼要地作出说明。\n对佛教的义理、历史和各种传承有一个精确的综观。\n既适合初学者，也能使资源的佛教学者感到惊心动魄、充满挑战；非佛教徒的读者，看了也可以激动荡脑力。', '2015-05-29'),
 ('978-7-544-27087-8', '解忧杂货店', '东野圭吾', 3, 3, 10, '39.50', '现代人内心流失的东西，这家杂货店能帮你找回——\n僻静的街道旁有一家杂货店，只要写下烦恼投进卷帘门的投信口，第二天就会在店后的牛奶箱里得到回答。\n因男友身患绝症，年轻女孩静子在爱情与梦想间徘徊；克郎为了音乐梦想离家漂泊，却在现实中寸步难行；少年浩介面临家庭巨变，挣扎在亲情与未来的迷茫中……\n他们将困惑写成信投进杂货店，随即奇妙的事情竟不断发生。\n生命中的一次偶然交会，将如何演绎出截然不同的人生？\n如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从未读过这样的小说。——东野圭吾', '2016-04-25'),
@@ -109,13 +103,6 @@ CREATE TABLE `borrow` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `borrow`
---
-
-INSERT INTO `borrow` (`bid`, `ISBN`, `rno`, `borrowdate`, `enddate`) VALUES
-(2, '978-7-5405-8629-4', '201437003', '2016-03-01', '2016-04-30');
-
---
 -- Triggers `borrow`
 --
 DELIMITER $$
@@ -144,9 +131,112 @@ CREATE TABLE `department` (
 
 INSERT INTO `department` (`rdept`, `maxborrownum`, `borrowdate`) VALUES
 ('教师', 10, 60),
-('本科生', 5, 30),
+('本科生', 7, 29),
 ('研究生', 7, 30),
 ('管理员', 100, 100);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ls_basicinfo`
+-- (See below for the actual view)
+--
+CREATE TABLE `ls_basicinfo` (
+`totalPeople` bigint(21)
+,`benke` bigint(21)
+,`yanjiu` bigint(21)
+,`teacher` bigint(21)
+,`bookTypeNum` bigint(21)
+,`bookKinds` bigint(21)
+,`bookTotalNum` decimal(32,0)
+,`bookAvailableNum` decimal(32,0)
+,`totalFine` decimal(27,2)
+,`totalBorrowNum` bigint(21)
+,`totalReturnNum` bigint(21)
+,`oweNum` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ls_book_all`
+-- (See below for the actual view)
+--
+CREATE TABLE `ls_book_all` (
+`ISBN` varchar(25)
+,`bname` varchar(50)
+,`bauthor` varchar(30)
+,`binventory` int(11)
+,`date` date
+,`btype` varchar(15)
+,`bprice` decimal(5,2)
+,`bnum` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ls_borrow_date`
+-- (See below for the actual view)
+--
+CREATE TABLE `ls_borrow_date` (
+`bid` int(11)
+,`ISBN` varchar(25)
+,`bname` varchar(50)
+,`bauthor` varchar(30)
+,`bprice` decimal(5,2)
+,`rno` varchar(9)
+,`rname` varchar(5)
+,`borrowdate` date
+,`returndate` date
+,`timeout` int(7)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ls_login`
+-- (See below for the actual view)
+--
+CREATE TABLE `ls_login` (
+`rno` varchar(9)
+,`password` varchar(40)
+,`rname` varchar(5)
+,`rdept` varchar(4)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ls_reader_department`
+-- (See below for the actual view)
+--
+CREATE TABLE `ls_reader_department` (
+`rno` varchar(9)
+,`rname` varchar(5)
+,`rdept` varchar(4)
+,`borrownum` int(11)
+,`maxborrownum` int(11)
+,`borrowdate` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ls_return_all`
+-- (See below for the actual view)
+--
+CREATE TABLE `ls_return_all` (
+`ISBN` varchar(25)
+,`bname` varchar(50)
+,`bauthor` varchar(30)
+,`bprice` decimal(5,2)
+,`rno` varchar(9)
+,`rname` varchar(5)
+,`rdept` varchar(4)
+,`returndate` date
+,`fine` decimal(5,2)
+);
 
 -- --------------------------------------------------------
 
@@ -159,17 +249,17 @@ CREATE TABLE `reader` (
   `rname` varchar(5) NOT NULL COMMENT '读者姓名',
   `borrownum` int(11) NOT NULL DEFAULT '0' COMMENT '当前借阅数目',
   `password` varchar(40) NOT NULL COMMENT '密码',
-  `rdept` varchar(4) NOT NULL COMMENT '所属部门'
+  `rdept` varchar(4) NOT NULL COMMENT '所属部门',
+  `phone` varchar(15) NOT NULL,
+  `email` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='读者表';
 
 --
 -- Dumping data for table `reader`
 --
 
-INSERT INTO `reader` (`rno`, `rname`, `borrownum`, `password`, `rdept`) VALUES
-('10000', '管理员', 0, 'd033e22ae348aeb5660fc2140aec35850c4da997', '管理员'),
-('201437003', '李博', 1, '7c4a8d09ca3762af61e59520943dc26494f8941b', '本科生'),
-('201437013', '沈博', 0, '4938e89bb6603ac385bb877724b8f601f9323187', '本科生');
+INSERT INTO `reader` (`rno`, `rname`, `borrownum`, `password`, `rdept`, `phone`, `email`) VALUES
+('10000', '吴世哲', 0, '902618bf043b32a5a444b9945eae69ea705e8074', '管理员', '', '');
 
 -- --------------------------------------------------------
 
@@ -184,13 +274,6 @@ CREATE TABLE `returnd` (
   `returndate` date NOT NULL COMMENT '实际归还日期',
   `fine` decimal(5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `returnd`
---
-
-INSERT INTO `returnd` (`rid`, `ISBN`, `rno`, `returndate`, `fine`) VALUES
-(1, '978-7-04-043202-2', '201437013', '2016-05-26', '24.30');
 
 --
 -- Triggers `returnd`
@@ -233,6 +316,92 @@ INSERT INTO `type` (`typeid`, `btype`) VALUES
 (17, '管理'),
 (18, '军事'),
 (19, '宗教');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ls_basicinfo`
+--
+DROP TABLE IF EXISTS `ls_basicinfo`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ls_basicinfo`  AS  select (select count(0) from `reader` where (`reader`.`rdept` <> '管理员')) AS `totalPeople`,(select count(0) from `reader` where (`reader`.`rdept` = '本科生')) AS `benke`,(select count(0) from `reader` where (`reader`.`rdept` = '研究生')) AS `yanjiu`,(select count(0) from `reader` where (`reader`.`rdept` = '教师')) AS `teacher`,(select count(0) from `type`) AS `bookTypeNum`,(select count(0) from `book`) AS `bookKinds`,(select sum(`book`.`binventory`) from `book`) AS `bookTotalNum`,(select sum(`book`.`bnum`) from `book`) AS `bookAvailableNum`,(select sum(`ls_return_all`.`fine`) from `ls_return_all`) AS `totalFine`,(select count(0) from `borrow`) AS `totalBorrowNum`,(select count(0) from `returnd`) AS `totalReturnNum`,(select count(0) from `ls_return_all`) AS `oweNum` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ls_book_all`
+--
+DROP TABLE IF EXISTS `ls_book_all`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ls_book_all`  AS  select `book`.`ISBN` AS `ISBN`,`book`.`bname` AS `bname`,`book`.`bauthor` AS `bauthor`,`book`.`binventory` AS `binventory`,`book`.`date` AS `date`,`type`.`btype` AS `btype`,`book`.`bprice` AS `bprice`,`book`.`bnum` AS `bnum` from (`book` join `type` on((`book`.`typeid` = `type`.`typeid`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ls_borrow_date`
+--
+DROP TABLE IF EXISTS `ls_borrow_date`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ls_borrow_date`  AS  select `borrow`.`bid` AS `bid`,`book`.`ISBN` AS `ISBN`,`book`.`bname` AS `bname`,`book`.`bauthor` AS `bauthor`,`book`.`bprice` AS `bprice`,`reader`.`rno` AS `rno`,`reader`.`rname` AS `rname`,`borrow`.`borrowdate` AS `borrowdate`,`borrow`.`enddate` AS `returndate`,if(((to_days(curdate()) - to_days(`borrow`.`enddate`)) > 0),(to_days(curdate()) - to_days(`borrow`.`enddate`)),0) AS `timeout` from ((`reader` join `borrow`) join `book`) where ((`reader`.`rno` = `borrow`.`rno`) and (`borrow`.`ISBN` = `book`.`ISBN`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ls_login`
+--
+DROP TABLE IF EXISTS `ls_login`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ls_login`  AS  select `reader`.`rno` AS `rno`,`reader`.`password` AS `password`,`reader`.`rname` AS `rname`,`department`.`rdept` AS `rdept` from (`reader` join `department` on((`department`.`rdept` = `reader`.`rdept`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ls_reader_department`
+--
+DROP TABLE IF EXISTS `ls_reader_department`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ls_reader_department`  AS  select `reader`.`rno` AS `rno`,`reader`.`rname` AS `rname`,`reader`.`rdept` AS `rdept`,`reader`.`borrownum` AS `borrownum`,`department`.`maxborrownum` AS `maxborrownum`,`department`.`borrowdate` AS `borrowdate` from (`reader` join `department` on((`department`.`rdept` = `reader`.`rdept`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ls_return_all`
+--
+DROP TABLE IF EXISTS `ls_return_all`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ls_return_all`  AS  select `book`.`ISBN` AS `ISBN`,`book`.`bname` AS `bname`,`book`.`bauthor` AS `bauthor`,`book`.`bprice` AS `bprice`,`reader`.`rno` AS `rno`,`reader`.`rname` AS `rname`,`reader`.`rdept` AS `rdept`,`returnd`.`returndate` AS `returndate`,`returnd`.`fine` AS `fine` from ((`returnd` join `book`) join `reader`) where ((`book`.`ISBN` = `returnd`.`ISBN`) and (`returnd`.`rno` = `reader`.`rno`)) ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `borrow`
+--
+ALTER TABLE `borrow`
+  ADD PRIMARY KEY (`bid`),
+  ADD UNIQUE KEY `bid` (`bid`);
+
+--
+-- Indexes for table `returnd`
+--
+ALTER TABLE `returnd`
+  ADD PRIMARY KEY (`rid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `borrow`
+--
+ALTER TABLE `borrow`
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT COMMENT '借阅编号';
+--
+-- AUTO_INCREMENT for table `returnd`
+--
+ALTER TABLE `returnd`
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT COMMENT '归还编号';
 
 CREATE view ls_login AS select rno, password, rname, department.rdept FROM reader JOIN department ON department.rdept = reader.rdept;
 CREATE view ls_book_all AS select ISBN, bname, bauthor, binventory, date, btype, bprice, bnum FROM book JOIN type on book.typeid = type.typeid;
