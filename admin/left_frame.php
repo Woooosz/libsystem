@@ -9,7 +9,7 @@
             <h5 class="list-group-item-heading">
                 主面板
             </h5>
-            <p class="list-group-item-text">运行统计信息</p>
+            <p class="list-group-item-text">系统统计信息</p>
         </a>
         <a href="/libsystem/admin/book" class="list-group-item">
             <h5 class="list-group-item-heading">

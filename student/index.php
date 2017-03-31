@@ -16,6 +16,12 @@ if (empty($_SESSION['rno'])) {
 	Header("Location: ../index.php");
 }
 $_SESSION['rname'] = $name;
+$_SESSION['rdept'] = $rdept;
+$conn->sql = "select count(*) as totalBook, sum(fine) as totalFine from ls_return_all where rno = ".$rno;
+$res       = $conn->fetch_res();
+
+$conn->sql = "select * from ls_basicinfo";
+$resd       = $conn->fetch_res();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
@@ -28,7 +34,7 @@ $_SESSION['rname'] = $name;
         <div class="row">
             <div class="col-lg-12">
                 <div class="collapse navbar-collapse main-navbar-collapse">
-                    <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
+                    <a class="navbar-brand" href="#"><strong>欢迎使用凌志图书管理系统</strong></a>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?> <i class="caret"></i></a>
@@ -52,32 +58,28 @@ $_SESSION['rname'] = $name;
         <!-- content -->
         <div class="col-md-10">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
+                <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <div class="text-muted bootstrap-admin-box-title">图书查询</div>
+                            <h3 class="panel-title">我的当前借阅情况</h3>
                         </div>
-                        <div class="bootstrap-admin-panel-content">
-                            <ul>
-                                <li>根据图书编号、图书名称查询图书信息</li>
-                                <li>可查询图书的编号、名称、分类、作者、价格、在馆数量等</li>
-                            </ul>
+                        <div class="panel-body">
+                            <p>当前在借<mark><?php echo $res[0]['totalBook']; ?></mark>本书，共产生欠费<mark><?php if(empty($res[0]['totalBook'])) echo "0";
+                            else echo $res[0]['totalBook'];
+                            ?></mark>元</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="text-muted bootstrap-admin-box-title">借阅信息</div>
-                        </div>
-                        <div class="bootstrap-admin-panel-content">
-                            <ul>
-                                <li>根据图书编号、图书名称查询自己借阅的图书信息</li>
-                                <li>可查询除图书的基本信息、借阅日期、截止还书日期、超期天数等</li>
-                            </ul>
-                        </div>
+        <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">图书统计信息</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>系统当前图书有<mark><?php echo $resd[0]['bookTypeNum'];
+?></mark>个门类，一共有<mark><?php echo $resd[0]['bookKinds'];
+?></mark>本图书，藏书量一共<mark><?php echo $resd[0]['bookTotalNum'];
+?></mark>本，当前可借阅数目共<mark><?php echo $resd[0]['bookAvailableNum'];
+?></mark>本。</p>
                     </div>
                 </div>
             </div>

@@ -7,20 +7,21 @@
         </a>
         <a href="/libsystem/student/" class="list-group-item">
             <h5 class="list-group-item-heading">
-                我的信息
+                主面板
             </h5>
+            <p class="list-group-item-text">概览相关统计信息</p>
         </a>
         <a href="/libsystem/student/book" class="list-group-item">
             <h5 class="list-group-item-heading">
                 图书查询
             </h5>
-            <p class="list-group-item-text">管理和维护图书信息</p>
+            <p class="list-group-item-text">浏览图书信息、借阅图书</p>
         </a>
         <a href="/libsystem/student/borrowInfo" class="list-group-item">
             <h5 class="list-group-item-heading">
                 借阅信息
             </h5>
-            <p class="list-group-item-text">根据学号、图书编号借阅图书</p>
+            <p class="list-group-item-text">查看我的借阅信息</p>
         </a>
     </div>
     <div class="list-group">
