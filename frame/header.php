@@ -1,4 +1,4 @@
-<title>图书馆管理系统</title>
+<title>凌志图书管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
@@ -12,5 +12,4 @@
     <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
     <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
     <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/libsystem/plugins/templatemo_script.js"></script>
     <script src="/libsystem/plugins/Chart.min.js"></script>

@@ -141,8 +141,6 @@ function update() {
     if (!validUpdate()) {
         return;
     }
-
-
     jQuery.ajax({
         type: 'POST',
         url: '/libsystem/admin/book/update.php',

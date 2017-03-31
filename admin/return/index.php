@@ -66,7 +66,6 @@ if ($_SESSION['rdept'] != "管理员") {
                             <th>部门</th>
                             <th>实际还书日期</th>
                             <th>罚金</th>
-                            <th>操作</th>
                         </tr>
                         </thead>
                     </table>
@@ -92,6 +91,7 @@ if ($_SESSION['rdept'] != "管理员") {
             </div>
         </div>
     </div>
+    
 </div>
 </body>
 </html>

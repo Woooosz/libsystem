@@ -19,29 +19,32 @@ $(function () {
             {"data": "sname"},
             {"data": "timeout"},
             {"data": null},
+            {"data": null},
             {"data": null}
         ],
         columnDefs: [
             {
                 targets: 6,
                 render: function (a, b, c, d) {
-                    //return (new Date(c.bdate)).format('yyyy-MM-dd');
                     return c.bdate;
                 }
             },
             {
                 targets: 7,
                 render: function (a, b, c, d) {
-                    //return (new Date(c.rdate)).format('yyyy-MM-dd');
                     return c.rdate;
                 }
             },
             {
                 targets: 8,
                 render: function (a, b, c, d) {
-                    //var days = (new Date()).minus(new Date(c.rdate));
-                    //return days > 0 ? days : "";
                     return c.timeout;
+                }
+            },
+            {
+                targets: 9,
+                render: function (a, b, c, d) {
+                     return "<button type='button' class='btn btn-xs btn-warning' id='btn_rent' onclick='showDel(\"" + c.id + "\")'>短信提醒</button>&nbsp";
                 }
             }
         ]
@@ -126,7 +129,31 @@ function validBorrow() {
 
     return flag;
 }
-
+function sendSMS() {
+    jQuery.ajax({
+        type: 'POST',
+        url: '/libsystem/SMS/sendSMS.php',
+        cache: false,
+        data: {
+            id: $('#delete_id').val()
+        },
+        success: function (data) {
+            if (data) {
+                $('#modal_delete').modal('hide');
+                table.ajax.reload();
+            } else {
+                showInfo("操作失败，请重试");
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            showInfo("操作失败，请重试");
+        }
+    });
+}
+function showDel(id) {
+    $('#modal_delete').modal('show');
+    $('#delete_id').val(id);
+}
 function showInfo(msg) {
     $("#div_info").text(msg);
     $("#modal_info").modal('show');

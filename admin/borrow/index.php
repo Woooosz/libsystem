@@ -65,6 +65,7 @@ if ($_SESSION['rdept'] != "管理员") {
                             <th>借阅日期</th>
                             <th>截止还书日期</th>
                             <th>超期天数</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                     </table>
@@ -86,6 +87,28 @@ if ($_SESSION['rdept'] != "管理员") {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" id="btn_info_close" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="deleteModalLabel">短信发送</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            确定发送提醒短信吗？
+                            <input type="hidden" id="delete_id"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btn_delete_close" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-danger" id="btn_delete" onclick="sendSMS()">确认</button>
                 </div>
             </div>
         </div>
