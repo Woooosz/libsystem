@@ -45,26 +45,6 @@
         </div>
     </div>
 </div>
-<body class="bootstrap-admin-without-padding">
-    <div class="modal fade" id="modal_info" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="infoModalLabel">提示</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12" id="div_info"></div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="btn_info_close" data-dismiss="modal">关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="modal_reg" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -171,8 +151,27 @@ for ($i = 0; $i < count($res); ++$i) {
             </div>
         </div>
     </div>
-</div>
 
+<body class="bootstrap-admin-without-padding">
+    <div class="modal fade" id="modal_info" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="infoModalLabel">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12" id="div_info"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btn_info_close" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </body>

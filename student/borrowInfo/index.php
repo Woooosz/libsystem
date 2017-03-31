@@ -18,7 +18,7 @@ if (empty($_SESSION['rno'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="collapse navbar-collapse main-navbar-collapse">
-                    <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
+                    <a class="navbar-brand" href="#"><strong>欢迎使用凌志图书管理系统</strong></a>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?> <i class="caret"></i></a>
