@@ -24,7 +24,7 @@
         <div class="col-md-12">
             <div class="alert alert-warning">
                 <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <h2>欢迎使用图书管理系统</h2>
+                    <h2>欢迎使用凌志图书管理系统</h2>
                     <p>2016-06-01 && 电商1402班</p>
                     <p>WEB数据库设计课程作业小组<p>
             </div>
