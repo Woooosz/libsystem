@@ -16,7 +16,7 @@ $res       = $conn->fetch_res();
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
 <head>
-    <title>图书馆管理系统</title>
+    <title>凌志图书管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
@@ -36,7 +36,7 @@ $res       = $conn->fetch_res();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="collapse navbar-collapse main-navbar-collapse">
-                        <a class="navbar-brand" href="#"><strong>欢迎使用图书馆管理系统</strong></a>
+                        <a class="navbar-brand" href="#"><strong>欢迎使用凌志图书管理系统</strong></a>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?><i class="caret"></i></a>

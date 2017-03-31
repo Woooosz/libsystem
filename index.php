@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" class="bootstrap-admin-vertical-centered">
 <head>
-    <title>图书馆管理系统</title>
+    <title>凌志图书管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
@@ -21,18 +21,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-warning">
-                <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <h2>欢迎使用凌志图书管理系统</h2>
-                    <p>2016-06-01 && 电商1402班</p>
-                    <p>WEB数据库设计课程作业小组<p>
-            </div>
 
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                <h2>欢迎使用凌志图书管理系统</h2>
+            </div>
             <form class="bootstrap-admin-login-form">
                 <div class="form-group">
                     <label class="control-label" for="username">账&nbsp;号</label>
-                    <input type="text" class="form-control" id="username" placeholder="学号"/>
+                    <input type="text" class="form-control" id="username" placeholder="帐号"/>
                     <label class="control-label" for="username" style="display:none;"></label>
                 </div>
                 <div class="form-group">
