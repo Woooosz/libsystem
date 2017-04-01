@@ -139,8 +139,7 @@ function sendSMS() {
         },
         success: function (data) {
             if (data) {
-                $('#modal_delete').modal('hide');
-                table.ajax.reload();
+                showInfo("发送成功。");
             } else {
                 showInfo("操作失败，请重试");
             }
