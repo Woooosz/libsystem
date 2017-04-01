@@ -197,6 +197,26 @@ if ($_SESSION['rdept'] != "管理员") {
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-lg-12 form-group has">
+                                    <label class="col-lg-3 control-label" for="update_mail"><label class="text-danger">*&nbsp;</label>邮箱</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" id="update_mail" type="text" value="">
+                                        <label class="control-label" for="update_mail"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12 form-group has">
+                                    <label class="col-lg-3 control-label" for="update_phone"><label class="text-danger">*&nbsp;</label>手机</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" id="update_phone" type="text" value="">
+                                        <label class="control-label" for="update_phone"></label>
+                                    </div>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>

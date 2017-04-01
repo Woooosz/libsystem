@@ -46,7 +46,9 @@ function add() {
         sno: $.trim($("#add_sno").val()),
         sname: $.trim($("#add_sname").val()),
         password: $.trim($("#add_password").val()),
-        type: $.trim($("#add_type").val())
+        type: $.trim($("#add_type").val()),
+        phone: $.trim($("#add_phone").val()),
+        mail: $.trim($("#add_mail").val())
     }
 
     jQuery.ajax({
@@ -57,7 +59,9 @@ function add() {
             sno: $.trim($("#add_sno").val()),
             sname: $.trim($("#add_sname").val()),
             password: $.trim($("#add_password").val()),
-            type: $.trim($("#add_type").val())
+            type: $.trim($("#add_type").val()),
+            phone: $.trim($("#add_phone").val()),
+            mail: $.trim($("#add_mail").val())
             },
         success: function (data) {
             if (data == 1) {
@@ -91,6 +95,8 @@ function showUpdate(id) {
             $("#update_sname").val(datas.sname);
             $("#update_password").val(datas.password);
             $("#update_type").val(datas.type);
+            $("#update_phone").val(datas.phone);
+            $("#update_mail").val(datas.mail);
             $("#update_booknum").val(datas.booknum);
             $('#modal_update').modal('show');
         },
@@ -111,7 +117,8 @@ function update() {
         sname: $.trim($("#update_sname").val()),
         password: $.trim($("#update_password").val()),
         type: $.trim($("#update_type").val()),
-        //booknum: $.trim($("#update_booknum").val()) 
+        mail: $.trim($("#update_mail").val()),
+        phone: $.trim($("#update_phone").val())
     }
 
     jQuery.ajax({
