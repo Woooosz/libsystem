@@ -17,11 +17,11 @@ if (empty($_SESSION['rno'])) {
 }
 $_SESSION['rname'] = $name;
 $_SESSION['rdept'] = $rdept;
-$conn->sql = "select count(*) as totalBook, sum(fine) as totalFine from ls_return_all where rno = ".$rno;
-$res       = $conn->fetch_res();
+$conn->sql         = "select count(*) as totalBook from borrow where rno = ".$rno;
+$res               = $conn->fetch_res();
 
 $conn->sql = "select * from ls_basicinfo";
-$resd       = $conn->fetch_res();
+$resd      = $conn->fetch_res();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
@@ -37,7 +37,7 @@ $resd       = $conn->fetch_res();
                     <a class="navbar-brand" href="#"><strong>欢迎使用凌志图书管理系统</strong></a>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?> <i class="caret"></i></a>
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?><i class="caret"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/libsystem/student/student">修改</a></li>
                                 <li role="presentation" class="divider"></li>
@@ -54,7 +54,7 @@ $resd       = $conn->fetch_res();
     <!-- left, vertical navbar & content -->
     <div class="row">
         <!-- left, vertical navbar -->
-    <?php include ("./left_frame.php");?>
+<?php include ("./left_frame.php");?>
         <!-- content -->
         <div class="col-md-10">
             <div class="row">
@@ -63,9 +63,8 @@ $resd       = $conn->fetch_res();
                             <h3 class="panel-title">我的当前借阅情况</h3>
                         </div>
                         <div class="panel-body">
-                            <p>当前在借<mark><?php echo $res[0]['totalBook']; ?></mark>本书，共产生欠费<mark><?php if(empty($res[0]['totalBook'])) echo "0";
-                            else echo $res[0]['totalBook'];
-                            ?></mark>元</p>
+                            <p>当前在借<mark><?php echo $res[0]['totalBook'];
+?></mark>本书。</p>
                         </div>
                     </div>
                 </div>

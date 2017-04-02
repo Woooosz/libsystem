@@ -83,7 +83,7 @@ $res               = $conn->fetch_res();
                         <h3 class="panel-title">借阅信息</h3>
                     </div>
                     <div class="panel-body">
-                        <p>自从系统运行以来，一共发生借阅<mark><?php echo $res[0]['totalBorrowNum'];
+                        <p>当前发生借阅<mark><?php echo $res[0]['totalBorrowNum'];
 ?></mark>次，归还<mark><?php echo $res[0]['totalReturnNum'];
 ?></mark>次。</p>
                     </div>
@@ -94,7 +94,7 @@ $res               = $conn->fetch_res();
                     </div>
                     <div class="panel-body">
                         <p>当前图书超期一共<mark><?php echo $res[0]['oweNum'];
-?></mark>人次，总共欠款<mark><?php if (empty($res[0]['totalFine'])) {echo "0";
+?></mark>人次，总共缴纳欠款<mark><?php if (empty($res[0]['totalFine'])) {echo "0";
 } else {
 
 	echo $res[0]['totalFine'];

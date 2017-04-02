@@ -3,12 +3,10 @@ function diffBetweenTwoDays($day1, $day2) {
 	$second1 = strtotime($day1);
 	$second2 = strtotime($day2);
 
-	if ($second1 < $second2) {
-		$tmp     = $second2;
-		$second2 = $second1;
-		$second1 = $tmp;
+	if ($second1-$second2 < 0) {return 0;
+	} else {
+		return ($second1-$second2)/86400;
 	}
-	return ($second1-$second2)/86400;
 }
 
 session_start();
@@ -42,6 +40,5 @@ if ($res_reader[0]['rname'] == "") {
 		}
 	}
 }
-
 
 ?>

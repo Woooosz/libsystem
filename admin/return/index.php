@@ -30,7 +30,7 @@ if ($_SESSION['rdept'] != "管理员") {
                             <form class="form-horizontal">
                                 <div class="row">
                                     <div class="col-lg-5 form-group">
-                                        <label class="col-lg-4 control-label" for="return_sno"><label class="text-danger">*&nbsp;</label>学生编号</label>
+                                        <label class="col-lg-4 control-label" for="return_sno"><label class="text-danger">*&nbsp;</label>用户编号</label>
                                         <div class="col-lg-8">
                                             <input class="form-control" id="return_sno" type="text" value="">
                                             <label class="control-label" for="return_sno" style="display: none"></label>
@@ -91,7 +91,7 @@ if ($_SESSION['rdept'] != "管理员") {
             </div>
         </div>
     </div>
-    
+
 </div>
 </body>
 </html>

@@ -4,6 +4,7 @@ $(function () {
         "ajax": {
             "url": "/libsystem/admin/borrow/list.php",
             "type": "POST",
+            "cache": false,
             "data": function (d) {
                 return {
                     "sno": $("#borrow_sno").val(),
@@ -156,4 +157,7 @@ function showDel(id) {
 function showInfo(msg) {
     $("#div_info").text(msg);
     $("#modal_info").modal('show');
+}
+function query() {
+    table.ajax.reload();
 }
