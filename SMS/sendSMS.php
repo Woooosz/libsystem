@@ -13,7 +13,7 @@ $req->setExtend("");
 $req->setSmsType("normal");
 $req->setSmsFreeSignName("silenx站");
 $money = 0.2*$res[0]['bname'];
-$req->setSmsParam("{user:'".$res[0]['rname']."',book:'".$res[0]['bname']."',days:'".$res[0]['timeout']."',m:'".$money."'}");
+$req->setSmsParam("{user:'".$res[0]['rname']."',book:'《".$res[0]['bname']."》',days:'".$res[0]['timeout']."天',m:'".$money."'}");
 $req->setRecNum($res[0]['phone']);
 $req->setSmsTemplateCode("SMS_59735097");
 $resp = $c->execute($req);
