@@ -12,7 +12,9 @@ function update() {
                     idss: $.trim($("#update_sno").val()),
                     bname: $.trim($("#update_sname").val()),
                     password: $.trim($("#update_password").val()),
-                    passwordNew: $.trim($("#update_password_new").val())
+                    passwordNew: $.trim($("#update_password_new").val()),
+                    phone: $.trim($("#update_phone").val()),
+                    mail: $.trim($("#update_mail").val())
         },
         success: function (data) {
             if (data == 1) {

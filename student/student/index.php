@@ -16,47 +16,16 @@ $res       = $conn->fetch_res();
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
 <head>
-    <title>凌志图书管理系统</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" href="/libsystem/plugins/datatables-1.10.8/css/dataTables.bootstrap.css">
-    <script src="/libsystem/plugins/jquery-1.11.3/jquery.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="/libsystem/plugins/bootstrap-3.3.5/js/bootstrap-dropdown.min.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/jquery.dataTables.zh_CN.js"></script>
-    <script src="/libsystem/plugins/datatables-1.10.8/js/dataTables.bootstrap.js"></script>
-    <script src="/libsystem/js/student_sx.js"></script>
+<?php include ('../../frame/header.php');?>
+<script src="/libsystem/js/student_sx.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
-    <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="collapse navbar-collapse main-navbar-collapse">
-                        <a class="navbar-brand" href="#"><strong>欢迎使用凌志图书管理系统</strong></a>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 欢迎您，<?php echo $_SESSION['rname'];?><i class="caret"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/libsystem/student/student">修改</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li><a href="/libsystem/logout">退出</a></li>
-                            </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
+<?php require_once '../../frame/welcome.php';?>
+<div class="container">
         <!-- left, vertical navbar & content -->
         <div class="row">
             <!-- left, vertical navbar -->
-            <?php include ("../left_frame.php");?>
+<?php include ("../left_frame.php");?>
             <!-- content -->
             <div class="col-md-10">
                 <div class="row">
@@ -113,7 +82,25 @@ $res       = $conn->fetch_res();
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 form-group">
+                                            <label class="col-lg-3 control-label" for="update_phone"><label class="text-danger">*&nbsp;</label>手机</label>
+                                            <div class="col-lg-7">
+                                                <input class="form-control" id="update_phone" type="text" value="<?php echo $res[0]['phone'];?>">
+                                                <label class="control-label" for="update_phone"></label>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-lg-12 form-group">
+                                            <label class="col-lg-3 control-label" for="update_mail"><label class="text-danger">*&nbsp;</label>邮箱</label>
+                                            <div class="col-lg-7">
+                                                <input class="form-control" id="update_mail" type="text" value="<?php echo $res[0]['email'];?>">
+                                                <label class="control-label" for="update_mail"></label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-12 form-group" style="text-align: center;">
                                             <button type="button" class="btn btn-lg btn-primary" id="btn_update_save" onclick="update()">保&nbsp;

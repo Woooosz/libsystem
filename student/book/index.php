@@ -10,16 +10,16 @@ if (empty($_SESSION['rno'])) {
 <html lang="zh-CN" class="ax-vertical-centered">
 <head>
 <?php include ('../../frame/header.php');?>
-    <script src="/libsystem/js/common.js"></script>
+<script src="/libsystem/js/common.js"></script>
     <script src="/libsystem/js/student_s.js"></script>
 </head>
 <body class="bootstrap-admin-with-small-navbar">
-    <?php require_once '../../frame/welcome.php';?>
-    <div class="container">
+<?php require_once '../../frame/welcome.php';?>
+<div class="container">
         <!-- left, vertical navbar & content -->
         <div class="row">
             <!-- left, vertical navbar -->
-            <?php include ("../left_frame.php");?>
+<?php include ("../left_frame.php");?>
             <!-- content -->
             <div class="col-md-10">
                 <div class="row">
