@@ -17,8 +17,8 @@ if ($res[0]['rdept'] != "管理员") {
 }
 $_SESSION['rname'] = $name;
 $_SESSION['rdept'] = $rdept;
-$conn->sql = "select * from ls_basicinfo";
-$res       = $conn->fetch_res();
+$conn->sql         = "select * from ls_basicinfo";
+$res               = $conn->fetch_res();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
@@ -55,14 +55,14 @@ $res       = $conn->fetch_res();
             <div class="col-md-9">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">用户总数</h3>
+                        <h3 class="panel-title">用户信息</h3>
                     </div>
                     <div class="panel-body">
                         <p>当前用户总数为<mark><?php echo $res[0]['totalPeople'];
 ?></mark>人，其中本科生用户<mark><?php echo $res[0]['benke'];
 ?></mark>人，研究生用户<mark><?php echo $res[0]['yanjiu'];
 ?></mark>人，教师用户<mark><?php echo $res[0]['teacher'];
-?></mark>人，当前用户在线<mark>36</mark>人。</p>
+?></mark>人。</p>
                     </div>
                 </div>
                 <div class="panel panel-primary">
@@ -94,7 +94,12 @@ $res       = $conn->fetch_res();
                     </div>
                     <div class="panel-body">
                         <p>当前图书超期一共<mark><?php echo $res[0]['oweNum'];
-?></mark>人次，总共欠款<mark><?php echo $res[0]['totalFine'];
+?></mark>人次，总共欠款<mark><?php if (empty($res[0]['totalFine'])) {echo "0";
+} else {
+
+	echo $res[0]['totalFine'];
+}
+
 ?></mark>元</p>
                     </div>
                 </div>
