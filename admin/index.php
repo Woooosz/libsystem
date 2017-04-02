@@ -93,7 +93,7 @@ $res               = $conn->fetch_res();
                         <h3 class="panel-title">财务欠款</h3>
                     </div>
                     <div class="panel-body">
-                        <p>当前图书超期一共<mark><?php echo $res[0]['oweNum'];
+                        <p>图书累计超期一共<mark><?php echo $res[0]['oweNum'];
 ?></mark>人次，总共缴纳欠款<mark><?php if (empty($res[0]['totalFine'])) {echo "0";
 } else {
 
