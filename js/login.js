@@ -155,7 +155,7 @@ function validReg() {
     var add_phone= $.trim($("#add_phone").val());
     if (add_email == "") {
         $("#add_phone").parent().parent().addClass("has-error");
-        $("#add_phone").next().text("请输入邮箱");
+        $("#add_phone").next().text("请输入手机号");
         flag = false;
     } else if (!isPhone(add_phone)) {
         $("#add_phone").parent().parent().addClass("has-error");
