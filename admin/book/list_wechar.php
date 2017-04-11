@@ -8,7 +8,7 @@ $sqls       = "SELECT ISBN AS bno,ISBN AS id,bname,bauthor AS author,binventory 
 $sql        = "select count(*) as mum from ls_book_all";
 $conn->sql  = $sql." where bname like '%".$bname."%'";
 $res        = $conn->fetch_res();
-$booksTotal = $res[0]['num'];
+$booksTotal = $res[0]['mum'];
 $conn->sql  = $sqls." where bname like '%".$bname."%'";
 $res        = $conn->fetch_res();
 if (empty($res[0])) {
