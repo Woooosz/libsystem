@@ -28,14 +28,12 @@ $(function () {
             {
                 targets: 6,
                 render: function (a, b, c, d) {
-                    //return (new Date(c.bdate)).format('yyyy-MM-dd');
                     return c.bdate;
                 }
             },
             {
                 targets: 7,
                 render: function (a, b, c, d) {
-                    //return (new Date(c.rdate)).format('yyyy-MM-dd');
                     return c.rdate;
                 }
             },
