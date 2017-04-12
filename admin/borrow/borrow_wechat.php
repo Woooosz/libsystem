@@ -12,7 +12,7 @@ if ($_POST['sno'] == "-1") {
 	$rno = $_POST['sno'];
 }
 
-$conn->sql = "SELECT bname,bnum FROM book WHERE bname='".$isbn."'";
+$conn->sql = "SELECT bname,bnum,isbn FROM book WHERE bname='".$isbn."'";
 $resbook   = $conn->fetch_res();
 
 if (empty($resbook[0]['bname'])) {
@@ -49,6 +49,7 @@ if (empty($resbook[0]['bname'])) {
 							if ($resborrow2[0]['borrownum'] == $resborrow2[0]['maxborrownum']) {
 								echo "-5";
 							} else {
+								$isbn    = $resbook[0]['isbn'];
 								$date    = date('Y-m-d');
 								$datestr = "+".$resborrow2[0]['borrowdate']." day";
 								$enddate = date("Y-m-d", strtotime($datestr));
