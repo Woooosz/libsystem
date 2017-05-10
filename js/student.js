@@ -180,6 +180,10 @@ function validAdd() {
         $("#add_sno").parent().parent().addClass("has-error");
         $("#add_sno").next().text("管理员编号长度不能大于20");
         flag = false;
+    } else if (isNaN(add_sno)){
+        $("#add_sno").parent().parent().addClass("has-error");
+        $("#add_sno").next().text("学生编号只能全部为数字");
+        flag = false;
     } else {
         $("#add_sno").parent().parent().removeClass("has-error");
         $("#add_sno").next().text("");
@@ -188,7 +192,7 @@ function validAdd() {
     var add_sname = $.trim($("#add_sname").val());
     if (add_sname == "") {
         $("#add_sname").parent().parent().addClass("has-error");
-        $("#add_sname").next().text("请输入管理员名称");
+        $("#add_sname").next().text("请输入姓名");
         flag = false;
     } else if (add_sname.length > 50) {
         $("#add_sname").parent().parent().addClass("has-error");
@@ -211,6 +215,42 @@ function validAdd() {
     } else {
         $("#add_password").parent().parent().removeClass("has-error");
         $("#add_password").next().text("");
+    }
+    var add_type = $.trim($("#add_type").val());
+    if(add_type == "") {
+        $("#add_type").parent().parent().addClass("has-error");
+        $("#add_type").next().text("请输入邮箱");
+        flag = false;
+    } else {
+        $("#add_type").parent().parent().removeClass("has-error");
+        $("#add_type").next().text("");
+    }
+    var add_email= $.trim($("#add_mail").val());
+    if (add_email == "") {
+        $("#add_mail").parent().parent().addClass("has-error");
+        $("#add_mail").next().text("请输入邮箱");
+        flag = false;
+    } else if (!isEmail(add_email)) {
+        $("#add_mail").parent().parent().addClass("has-error");
+        $("#add_mail").next().text("邮箱地址不合法");
+        flag = false;
+    } else {
+        $("#add_mail").parent().parent().removeClass("has-error");
+        $("#add_mail").next().text("");
+    }
+
+    var add_phone= $.trim($("#add_phone").val());
+    if (add_email == "") {
+        $("#add_phone").parent().parent().addClass("has-error");
+        $("#add_phone").next().text("请输入手机号");
+        flag = false;
+    } else if (!isPhone(add_phone)) {
+        $("#add_phone").parent().parent().addClass("has-error");
+        $("#add_phone").next().text("手机号不合法");
+        flag = false;
+    } else {
+        $("#add_phone").parent().parent().removeClass("has-error");
+        $("#add_phone").next().text("");
     }
 
     return flag;
