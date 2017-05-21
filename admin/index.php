@@ -19,6 +19,8 @@ $_SESSION['rname'] = $name;
 $_SESSION['rdept'] = $rdept;
 $conn->sql         = "select * from ls_basicinfo";
 $res               = $conn->fetch_res();
+$conn->sql         = "select bname, count(*) as num from ls_return_all group by ISBN order by num desc limit 0,10  ";
+$resdTopTen        = $conn->fetch_res();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" class="ax-vertical-centered">
@@ -103,9 +105,20 @@ $res               = $conn->fetch_res();
 ?></mark>元</p>
                     </div>
                 </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">当前借阅排行榜TOP 10</h3>
+                    </div>
+                    <div class="panel-body">
+<?php
+for ($i = 0; $i < count($resdTopTen); ++$i) {
+	echo "<p>No.".($i+1)."<mark>  ".$resdTopTen[$i]['bname']."</mark></p>";
+}
+?>
+    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </body>
 </html>

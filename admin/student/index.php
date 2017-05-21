@@ -24,6 +24,7 @@ if ($_SESSION['rdept'] != "管理员") {
                             <div class="panel-heading">
                                 <div class="text-muted bootstrap-admin-box-title">模糊查询</div>
                             </div>
+
                             <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
                                 <form class="form-horizontal">
                                     <div class="col-lg-5 form-group">
