@@ -109,12 +109,12 @@ for ($i = 0; $i < count($resdTopTen); ++$i) {
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    <h3 class="panel-title">与你借阅相同书籍的人他们还借阅了</h3>
+                    <h3 class="panel-title">图书推荐</h3>
                 </div>
                 <div class="panel-body">
 <?php
 if (!count($resRec)) {
-	echo "<p>你还没有借阅记录哦，暂时无法为你推荐信息.</p>";
+	echo "<p>你还没有归还记录哦，暂时没有推荐信息</p>";
 }
 for ($i = 0; $i < count($resRec); ++$i) {
 	echo "<p>No.".($i+1)."<mark>  ".$resRec[$i]['bname']."</mark></p>";
