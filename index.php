@@ -25,8 +25,8 @@
         <div class="col-md-12">
             <div class="alert alert-info">
                 <h2>欢迎使用凌志图书管理系统</h2>
-                <h4>管理员帐号：10000 密码：123456</h4>
-                <h4>用户帐号：201437001 密码：123456</h4>
+                <h6>管理员帐号：10000 密码：123456</h6>
+                <h6>用户帐号：201437001 密码：123456</h6>
             </div>
             <form class="bootstrap-admin-login-form">
                 <div class="form-group">
