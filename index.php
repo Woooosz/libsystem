@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" class="bootstrap-admin-vertical-centered">
 <head>
-    <title>凌志图书管理系统</title>
+    <title>图书管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/libsystem/plugins/bootstrap-3.3.5/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
 
         <div class="col-md-12">
             <div class="alert alert-info">
-                <h2>欢迎使用凌志图书管理系统</h2>
+                <h2>欢迎使用图书管理系统</h2>
             </div>
             <form class="bootstrap-admin-login-form">
                 <div class="form-group">
